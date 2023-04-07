@@ -1,0 +1,7 @@
+﻿<Properties StartupConfiguration="{502501CE-F865-4CFB-919C-E75A90B434FC}|Default">
+  <MonoDevelop.Ide.ItemProperties.Communications FirstBuild="True" />
+  <MonoDevelop.Ide.ItemProperties.AgarioModels FirstBuild="True" />
+  <MonoDevelop.Ide.ItemProperties.ClientGUI FirstBuild="True" PreferredExecutionTarget="MyAppleMacCatalystID" />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.Logger FirstBuild="True" />
+</Properties>
