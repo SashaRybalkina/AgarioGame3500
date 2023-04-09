@@ -6,7 +6,7 @@ namespace TowardAgarioStepTwo
 {
     public class TowardAgarioStepTwo
     {
-        static void Main(String[] args)
+        static void Main(string[] args)
         {
             var person = new Person();
             string message = JsonSerializer.Serialize(person);
