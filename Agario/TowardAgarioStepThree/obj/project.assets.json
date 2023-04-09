@@ -111,6 +111,16 @@
           "buildTransitive/net6.0/_._": {}
         }
       },
+      "AgarioModels/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/AgarioModels.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/AgarioModels.dll": {}
+        }
+      },
       "Communications/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
@@ -353,6 +363,11 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "AgarioModels/1.0.0": {
+      "type": "project",
+      "path": "../AgarioModels/AgarioModels.csproj",
+      "msbuildProject": "../AgarioModels/AgarioModels.csproj"
+    },
     "Communications/1.0.0": {
       "type": "project",
       "path": "../Communications/Communications.csproj",
@@ -366,24 +381,25 @@
   },
   "projectFileDependencyGroups": {
     "net7.0": [
+      "AgarioModels >= 1.0.0",
       "Communications >= 1.0.0",
       "Logger >= 1.0.0"
     ]
   },
   "packageFolders": {
-    "/Users/aurora/.nuget/packages/": {}
+    "/Users/sasharybalkina/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/aurora/Projects/assignment8agario-dominators_of_worlds/Agario/TowardAgarioStepThree/TowardAgarioStepThree.csproj",
+      "projectUniqueName": "/Users/sasharybalkina/Projects/AS8/Agario/TowardAgarioStepThree/TowardAgarioStepThree.csproj",
       "projectName": "TowardAgarioStepThree",
-      "projectPath": "/Users/aurora/Projects/assignment8agario-dominators_of_worlds/Agario/TowardAgarioStepThree/TowardAgarioStepThree.csproj",
-      "packagesPath": "/Users/aurora/.nuget/packages/",
-      "outputPath": "/Users/aurora/Projects/assignment8agario-dominators_of_worlds/Agario/TowardAgarioStepThree/obj/",
+      "projectPath": "/Users/sasharybalkina/Projects/AS8/Agario/TowardAgarioStepThree/TowardAgarioStepThree.csproj",
+      "packagesPath": "/Users/sasharybalkina/.nuget/packages/",
+      "outputPath": "/Users/sasharybalkina/Projects/AS8/Agario/TowardAgarioStepThree/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/aurora/.nuget/NuGet/NuGet.Config"
+        "/Users/sasharybalkina/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
@@ -396,11 +412,14 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "/Users/aurora/Projects/assignment8agario-dominators_of_worlds/Agario/Communications/Communications.csproj": {
-              "projectPath": "/Users/aurora/Projects/assignment8agario-dominators_of_worlds/Agario/Communications/Communications.csproj"
+            "/Users/sasharybalkina/Projects/AS8/Agario/AgarioModels/AgarioModels.csproj": {
+              "projectPath": "/Users/sasharybalkina/Projects/AS8/Agario/AgarioModels/AgarioModels.csproj"
             },
-            "/Users/aurora/Projects/assignment8agario-dominators_of_worlds/Agario/Logger/Logger.csproj": {
-              "projectPath": "/Users/aurora/Projects/assignment8agario-dominators_of_worlds/Agario/Logger/Logger.csproj"
+            "/Users/sasharybalkina/Projects/AS8/Agario/Communications/Communications.csproj": {
+              "projectPath": "/Users/sasharybalkina/Projects/AS8/Agario/Communications/Communications.csproj"
+            },
+            "/Users/sasharybalkina/Projects/AS8/Agario/Logger/Logger.csproj": {
+              "projectPath": "/Users/sasharybalkina/Projects/AS8/Agario/Logger/Logger.csproj"
             }
           }
         }
@@ -430,7 +449,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.101/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.202/RuntimeIdentifierGraph.json"
       }
     }
   }

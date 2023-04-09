@@ -1,21 +1,21 @@
 {
   "format": 1,
   "restore": {
-    "/Users/aurora/Projects/assignment8agario-dominators_of_worlds/Agario/ClientGUI/ClientGUI.csproj": {}
+    "/Users/sasharybalkina/Projects/AS8/Agario/ClientGUI/ClientGUI.csproj": {}
   },
   "projects": {
-    "/Users/aurora/Projects/assignment8agario-dominators_of_worlds/Agario/ClientGUI/ClientGUI.csproj": {
+    "/Users/sasharybalkina/Projects/AS8/Agario/ClientGUI/ClientGUI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/aurora/Projects/assignment8agario-dominators_of_worlds/Agario/ClientGUI/ClientGUI.csproj",
+        "projectUniqueName": "/Users/sasharybalkina/Projects/AS8/Agario/ClientGUI/ClientGUI.csproj",
         "projectName": "ClientGUI",
-        "projectPath": "/Users/aurora/Projects/assignment8agario-dominators_of_worlds/Agario/ClientGUI/ClientGUI.csproj",
-        "packagesPath": "/Users/aurora/.nuget/packages/",
-        "outputPath": "/Users/aurora/Projects/assignment8agario-dominators_of_worlds/Agario/ClientGUI/obj/",
+        "projectPath": "/Users/sasharybalkina/Projects/AS8/Agario/ClientGUI/ClientGUI.csproj",
+        "packagesPath": "/Users/sasharybalkina/.nuget/packages/",
+        "outputPath": "/Users/sasharybalkina/Projects/AS8/Agario/ClientGUI/obj/",
         "projectStyle": "PackageReference",
         "crossTargeting": true,
         "configFilePaths": [
-          "/Users/aurora/.nuget/NuGet/NuGet.Config"
+          "/Users/sasharybalkina/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0-android",
@@ -76,7 +76,7 @@
             },
             "Microsoft.Maui.Graphics": {
               "target": "Package",
-              "version": "[7.0.52, )",
+              "version": "[7.0.59, )",
               "autoReferenced": true
             },
             "Xamarin.Android.Glide": {
@@ -163,7 +163,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.101/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.202/RuntimeIdentifierGraph.json"
         },
         "net7.0-ios16.1": {
           "targetAlias": "net7.0-ios",
@@ -194,7 +194,7 @@
             },
             "Microsoft.Maui.Graphics": {
               "target": "Package",
-              "version": "[7.0.52, )",
+              "version": "[7.0.59, )",
               "autoReferenced": true
             }
           },
@@ -226,7 +226,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.101/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.202/RuntimeIdentifierGraph.json"
         },
         "net7.0-maccatalyst16.1": {
           "targetAlias": "net7.0-maccatalyst",
@@ -257,7 +257,7 @@
             },
             "Microsoft.Maui.Graphics": {
               "target": "Package",
-              "version": "[7.0.52, )",
+              "version": "[7.0.59, )",
               "autoReferenced": true
             }
           },
@@ -290,7 +290,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.101/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.202/RuntimeIdentifierGraph.json"
         }
       },
       "runtimes": {

@@ -1,16 +1,16 @@
 {
   "version": 2,
-  "dgSpecHash": "uGZtmDY/ajwLYDJBT0d1jCNYG/ggfT0xn2tKWplowrUkZwQSDgBkfYv1pEY8Hi+XUa0y06JJHSAUCVIANfq7DQ==",
+  "dgSpecHash": "4m+Z4BCW/1o+aJ8vswqHbzcgNCXKBzt9ByDTh9ldRPp+qeVvoqEt493JGL2onoxSHGOHm7q4S9gkhHf7CKhq5w==",
   "success": true,
-  "projectFilePath": "/Users/aurora/Projects/assignment8agario-dominators_of_worlds/Agario/TowardAgarioStepTwo/TowardAgarioStepTwo.csproj",
+  "projectFilePath": "/Users/sasharybalkina/Projects/AS8/Agario/TowardAgarioStepTwo/TowardAgarioStepTwo.csproj",
   "expectedPackageFiles": [
-    "/Users/aurora/.nuget/packages/microsoft.netcore.platforms/1.1.0/microsoft.netcore.platforms.1.1.0.nupkg.sha512",
-    "/Users/aurora/.nuget/packages/microsoft.netcore.targets/1.1.2/microsoft.netcore.targets.1.1.2.nupkg.sha512",
-    "/Users/aurora/.nuget/packages/system.console/4.3.1/system.console.4.3.1.nupkg.sha512",
-    "/Users/aurora/.nuget/packages/system.io/4.3.0/system.io.4.3.0.nupkg.sha512",
-    "/Users/aurora/.nuget/packages/system.runtime/4.3.0/system.runtime.4.3.0.nupkg.sha512",
-    "/Users/aurora/.nuget/packages/system.text.encoding/4.3.0/system.text.encoding.4.3.0.nupkg.sha512",
-    "/Users/aurora/.nuget/packages/system.threading.tasks/4.3.0/system.threading.tasks.4.3.0.nupkg.sha512"
+    "/Users/sasharybalkina/.nuget/packages/microsoft.netcore.platforms/1.1.0/microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "/Users/sasharybalkina/.nuget/packages/microsoft.netcore.targets/1.1.2/microsoft.netcore.targets.1.1.2.nupkg.sha512",
+    "/Users/sasharybalkina/.nuget/packages/system.console/4.3.1/system.console.4.3.1.nupkg.sha512",
+    "/Users/sasharybalkina/.nuget/packages/system.io/4.3.0/system.io.4.3.0.nupkg.sha512",
+    "/Users/sasharybalkina/.nuget/packages/system.runtime/4.3.0/system.runtime.4.3.0.nupkg.sha512",
+    "/Users/sasharybalkina/.nuget/packages/system.text.encoding/4.3.0/system.text.encoding.4.3.0.nupkg.sha512",
+    "/Users/sasharybalkina/.nuget/packages/system.threading.tasks/4.3.0/system.threading.tasks.4.3.0.nupkg.sha512"
   ],
   "logs": []
 }

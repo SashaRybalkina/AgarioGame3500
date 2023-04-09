@@ -475,19 +475,19 @@
     ]
   },
   "packageFolders": {
-    "/Users/aurora/.nuget/packages/": {}
+    "/Users/sasharybalkina/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/aurora/Projects/assignment8agario-dominators_of_worlds/Agario/TowardAgarioStepTwo/TowardAgarioStepTwo.csproj",
+      "projectUniqueName": "/Users/sasharybalkina/Projects/AS8/Agario/TowardAgarioStepTwo/TowardAgarioStepTwo.csproj",
       "projectName": "TowardAgarioStepTwo",
-      "projectPath": "/Users/aurora/Projects/assignment8agario-dominators_of_worlds/Agario/TowardAgarioStepTwo/TowardAgarioStepTwo.csproj",
-      "packagesPath": "/Users/aurora/.nuget/packages/",
-      "outputPath": "/Users/aurora/Projects/assignment8agario-dominators_of_worlds/Agario/TowardAgarioStepTwo/obj/",
+      "projectPath": "/Users/sasharybalkina/Projects/AS8/Agario/TowardAgarioStepTwo/TowardAgarioStepTwo.csproj",
+      "packagesPath": "/Users/sasharybalkina/.nuget/packages/",
+      "outputPath": "/Users/sasharybalkina/Projects/AS8/Agario/TowardAgarioStepTwo/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/aurora/.nuget/NuGet/NuGet.Config"
+        "/Users/sasharybalkina/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
@@ -533,7 +533,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.101/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.202/RuntimeIdentifierGraph.json"
       }
     }
   }
