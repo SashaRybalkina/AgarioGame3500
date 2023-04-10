@@ -26,11 +26,11 @@ namespace TowardAgarioStepOne
             {
                 X += Direction.X;
                 Y += Direction.Y;
-                if (X == 800 | Y == 800)
+                if (X == 800 || Y == 800 || X == 0 || Y == 0)
                 {
-                    if (X == 800)
+                    if (X == 800 || X == 0)
                         Direction = new Vector2(-Direction.X, Direction.Y);
-                    if (Y == 800)
+                    if (Y == 800 || Y == 0)
                         Direction = new Vector2(Direction.X, -Direction.Y);
                 }
             }

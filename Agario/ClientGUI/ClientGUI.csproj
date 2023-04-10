@@ -57,4 +57,7 @@
 	<ItemGroup>
 	  <BundleResource Include="Resources\Images\dotnet_bot.svg" />
 	</ItemGroup>
+	<ItemGroup>
+	  <ProjectReference Include="..\AgarioModels\AgarioModels.csproj" />
+	</ItemGroup>
 </Project>
