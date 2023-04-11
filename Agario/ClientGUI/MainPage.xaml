@@ -1,18 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="TowardAgarioStepOne.MainPage">
+             x:Class="ClientGUI.MainPage">
 
      <StackLayout>
 
          <GraphicsView 
                 x:Name="PlaySurface"
                 VerticalOptions="Center"
-                BackgroundColor="Blue"
-                HeightRequest="800"
-                WidthRequest="800" />
-        <Label x:Name="circleCenterLabel" Text="{Binding CircleCenter}" />
-        <Label x:Name="directionLabel" Text="{Binding Direction}" />
+                BackgroundColor="LightPink"
+                HeightRequest="5000"
+                WidthRequest="5000" />
+        <Label x:Name="circleCenterLabel" Text="" />
+        <Label x:Name="directionLabel" Text="" />
 
     </StackLayout>
 

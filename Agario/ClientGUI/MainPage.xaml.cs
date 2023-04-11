@@ -5,7 +5,7 @@ using System.Diagnostics;
 using System.Timers;
 using AgarioModels;
 
-namespace TowardAgarioStepOne;
+namespace ClientGUI;
 
 public partial class MainPage : ContentPage
 {

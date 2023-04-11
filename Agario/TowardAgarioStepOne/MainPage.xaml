@@ -11,8 +11,8 @@
                 BackgroundColor="Blue"
                 HeightRequest="800"
                 WidthRequest="800" />
-        <Label x:Name="circleCenterLabel" Text="{Binding CircleCenter}" />
-        <Label x:Name="directionLabel" Text="{Binding Direction}" />
+        <Label x:Name="circleCenterLabel" Text="" />
+        <Label x:Name="directionLabel" Text="" />
 
     </StackLayout>
 
