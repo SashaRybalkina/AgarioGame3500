@@ -3,17 +3,52 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ClientGUI.MainPage">
 
-     <StackLayout>
+   <StackLayout>
+       <!--First ScrollView: the welcome screen-->
+       <ScrollView x:Name="welcomeScreen" IsVisible="true">
+           <StackLayout>
+               <StackLayout Orientation="Horizontal">
+                   <Label Text="Server Name: " VerticalOptions="CenterAndExpand" />
+                   <Entry x:Name="ServerIPEntry" Placeholder="Enter Server Name or IP" VerticalOptions="CenterAndExpand" Text="localhost"/>
+               </StackLayout>
 
-         <GraphicsView 
-                x:Name="PlaySurface"
-                VerticalOptions="Center"
-                BackgroundColor="LightPink"
-                HeightRequest="5000"
-                WidthRequest="5000" />
-        <Label x:Name="circleCenterLabel" Text="" />
-        <Label x:Name="directionLabel" Text="" />
+               <StackLayout Orientation="Horizontal">
+                   <Label Text="Server Port: " VerticalOptions="CenterAndExpand"/>
+                   <Entry x:Name="ServerPortEntry" Placeholder="Enter server port" VerticalOptions="CenterAndExpand" Text="11000"/>
+               </StackLayout>
 
-    </StackLayout>
+               <StackLayout Orientation="Horizontal">
+                   <Label Text="Your Name: " VerticalOptions="CenterAndExpand"/>
+                   <Entry x:Name="UnsernameEntry" Placeholder="What is your name?" VerticalOptions="CenterAndExpand"/>
+               </StackLayout>
+
+               <StackLayout>
+                   <Button x:Name="startButton" Text="Start Game" Clicked="onStartButtonClicked"/>
+               </StackLayout>
+
+
+           </StackLayout>
+
+       </ScrollView>
+
+       <!--Second ScrollView: the actual game screen-->
+       <ScrollView x:Name="gameScreen" IsVisible="false">
+            <StackLayout>
+
+                <GraphicsView 
+                        x:Name="PlaySurface"
+                        VerticalOptions="Center"
+                        BackgroundColor="LightPink"
+                        HeightRequest="5000"
+                        WidthRequest="5000" />
+                <Label x:Name="circleCenterLabel" Text="" />
+                <Label x:Name="directionLabel" Text="" />
+
+            </StackLayout>
+       </ScrollView>
+
+   </StackLayout>   
 
 </ContentPage>
+
+

@@ -57,4 +57,10 @@ public partial class MainPage : ContentPage
         directionLabel.Text = Direction.ToString();
         Console.WriteLine("invoking");
     }
+
+    private async void onStartButtonClicked(object sender, EventArgs e)
+    {
+        welcomeScreen.IsVisible = false;
+        gameScreen.IsVisible = true;
+    }
 }
