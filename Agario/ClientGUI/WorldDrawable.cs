@@ -15,7 +15,7 @@ namespace ClientGUI
         public void Draw(ICanvas canvas, RectF dirtyRect)
         {
             canvas.FillColor = Colors.Red;
-            canvas.FillCircle(worldModel.player.X, worldModel.player.Y, worldModel.player.Radius);
+            canvas.FillCircle(worldModel.player.location.X, worldModel.player.Y, worldModel.player.Radius);
             for (int i = 0; i < worldModel.foods.Count(); i++)
             {
                 canvas.FillColor = Colors.Blue;

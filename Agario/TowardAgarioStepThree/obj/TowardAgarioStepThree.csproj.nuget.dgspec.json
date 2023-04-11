@@ -26,7 +26,11 @@
         "frameworks": {
           "net7.0": {
             "targetAlias": "net7.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "/Users/sasharybalkina/Projects/AS8/Agario/Logger/Logger.csproj": {
+                "projectPath": "/Users/sasharybalkina/Projects/AS8/Agario/Logger/Logger.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

@@ -22,7 +22,7 @@ public class World
         this.Height = 5000;       
         players = new List<Player>(3);
         foods = new List<Food>(15);
-        player = new Player(1, "A", new Vector2(400, 400), 12, 0);
+        player = new Player(1, "A", new Vector2(2500, 2500), 120, 0);
         direction = new Vector2(10, 5);
         IDs = new List<long>();
         int i = 1;
@@ -58,9 +58,16 @@ public class World
                 id = random.Next(1000);
             }
             IDs.Add(id);
-            foods.Add(new Food(id, new Vector2(random.Next(0,5000), random.Next(0, 5000)), random.Next(0, 13), random.Next(100)));
+            foods.Add(new Food(id, new Vector2(random.Next(0,5000), random.Next(0, 5000)), random.Next(50, 130), random.Next(100)));
+        }
+        foreach (Food food in foods)
+        {
+            if (player.location == food.location)
+            {
+                foods.Remove(food);
+                player.Mass *= 2;
+            }
         }
     }
 
 }
-
