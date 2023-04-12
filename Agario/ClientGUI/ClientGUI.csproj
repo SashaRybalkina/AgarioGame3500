@@ -59,5 +59,7 @@
 	</ItemGroup>
 	<ItemGroup>
 	  <ProjectReference Include="..\AgarioModels\AgarioModels.csproj" />
+	  <ProjectReference Include="..\Communications\Communications.csproj" />
+	  <ProjectReference Include="..\Logger\Logger.csproj" />
 	</ItemGroup>
 </Project>

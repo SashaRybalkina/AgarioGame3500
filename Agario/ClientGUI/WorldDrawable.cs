@@ -7,7 +7,7 @@ namespace ClientGUI
 	{
         private World worldModel;
 
-        public WorldDrawable(World worldModel)
+        public WorldDrawable(ref World worldModel)
         {
             this.worldModel = worldModel;
         }
@@ -21,6 +21,7 @@ namespace ClientGUI
                 canvas.FillColor = Colors.Blue;
                 canvas.FillCircle(worldModel.foods[i].X, worldModel.foods[i].Y, worldModel.foods[i].Radius);
             }
+            canvas.FillCircle(10, 10, 10);
             
         }
     }

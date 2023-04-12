@@ -13,42 +13,29 @@ public class World
     public List<Food> foods;
     public Food food;
     public CustomFileLogger logger;
-    public Vector2 direction;
     private List<long> IDs;
 
     public World()
     {
-        this.Width = 5000;
-        this.Height = 5000;       
+        this.Width = 500;
+        this.Height = 500;       
         players = new List<Player>(3);
         foods = new List<Food>(15);
-        player = new Player(1, "A", new Vector2(2500, 2500), 120, 0);
-        direction = new Vector2(10, 5);
+        player = new Player(1, "A", new Vector2(100, 100), 120, 0);
         IDs = new List<long>();
-        int i = 1;
-        while (i < 16)
+        int id = 1;
+        while (id < 16)
         {
             Random random = new Random();
-            IDs.Add(i);
-            foods.Add(new Food(i, new Vector2(random.Next(0, 5000), random.Next(0, 5000)), random.Next(0, 13), random.Next(100)));
-            i++;
+            IDs.Add(id);
+            foods.Add(new Food(id, new Vector2(random.Next(0, (int)this.Width), random.Next(0, (int)this.Height)), random.Next(0, 13), random.Next(100)));
+            id++;
         }
     }
 
     public void AdvanceGameOneStep()
     {
-        lock (this)
-        {
-            player.x += direction.X;
-            player.y += direction.Y;
-            if (player.x == 800 || player.y == 800 || player.x == 0 || player.y == 0)
-            {
-                if (player.x == 800 || player.x == 0)
-                    direction = new Vector2(-direction.X, direction.Y);
-                if (player.y == 800 || player.y == 0)
-                    direction = new Vector2(direction.X, -direction.Y);
-            }
-        }
+        player.x = 
         if (foods.Count < 15)
         {
             Random random = new Random();
@@ -58,7 +45,7 @@ public class World
                 id = random.Next(1000);
             }
             IDs.Add(id);
-            foods.Add(new Food(id, new Vector2(random.Next(0,5000), random.Next(0, 5000)), random.Next(50, 130), random.Next(100)));
+            foods.Add(new Food(id, new Vector2(random.Next(0,(int)this.Width), random.Next(0, (int)this.Height)), random.Next(50, 130), random.Next(100)));
         }
         foreach (Food food in foods)
         {

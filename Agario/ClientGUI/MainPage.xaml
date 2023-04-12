@@ -9,7 +9,7 @@
            <StackLayout>
                <StackLayout Orientation="Horizontal">
                    <Label Text="Server Name: " VerticalOptions="CenterAndExpand" />
-                   <Entry x:Name="ServerIPEntry" Placeholder="Enter Server Name or IP" VerticalOptions="CenterAndExpand" Text="localhost"/>
+                   <Entry x:Name="ServerIPEntry" Placeholder="Enter Server Name or IP" VerticalOptions="CenterAndExpand" Text=""/>
                </StackLayout>
 
                <StackLayout Orientation="Horizontal">
@@ -19,7 +19,7 @@
 
                <StackLayout Orientation="Horizontal">
                    <Label Text="Your Name: " VerticalOptions="CenterAndExpand"/>
-                   <Entry x:Name="UnsernameEntry" Placeholder="What is your name?" VerticalOptions="CenterAndExpand"/>
+                   <Entry x:Name="UsernameEntry" Placeholder="What is your name?" VerticalOptions="CenterAndExpand" Text=""/>
                </StackLayout>
 
                <StackLayout>
@@ -36,14 +36,17 @@
             <StackLayout>
 
                 <GraphicsView 
-                        x:Name="PlaySurface"
-                        VerticalOptions="Center"
-                        BackgroundColor="LightPink"
-                        HeightRequest="5000"
-                        WidthRequest="5000" />
-                <Label x:Name="circleCenterLabel" Text="" />
-                <Label x:Name="directionLabel" Text="" />
-
+                x:Name="PlaySurface"
+                VerticalOptions="Center"
+                BackgroundColor="LightPink"
+                HeightRequest="800"
+                WidthRequest="800">
+                <GraphicsView.GestureRecognizers>
+                    <PointerGestureRecognizer PointerMoved="PointerChanged"/>
+                    <TapGestureRecognizer Tapped="OnTap"/>
+                    <PanGestureRecognizer PanUpdated="PanUpdated"/>
+                </GraphicsView.GestureRecognizers>
+                </GraphicsView>
             </StackLayout>
        </ScrollView>
 
