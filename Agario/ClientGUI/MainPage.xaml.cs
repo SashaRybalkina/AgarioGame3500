@@ -65,7 +65,6 @@ public partial class MainPage : ContentPage
 
     private async void onConnect(Networking connection)
     {
-        startButton.IsEnabled = false;       
         if (connection.tcpClient.Connected)
         {
             connection.Send(Protocols.CMD_Start_Game);
@@ -93,16 +92,17 @@ public partial class MainPage : ContentPage
     }
 
     private async void onStartButtonClicked(object sender, EventArgs e)
-    {
-        welcomeScreen.IsVisible = false;
-        gameScreen.IsVisible = true;
+    {      
         try
         {
-            network = new Networking(new CustomFileLogger(""), onMessage,
+            network = new Networking(new CustomFileLogger(UsernameEntry.Text), onMessage,
                 onDisconnect, onConnect, '\n');
             string hostname = ServerIPEntry.Text;
-            int port = int.Parse(ServerPortEntry.Text);           
+            int port = int.Parse(ServerPortEntry.Text);
+            network.ID = UsernameEntry.Text;
             network.Connect(hostname, port);
+            welcomeScreen.IsVisible = false;
+            gameScreen.IsVisible = true;
         }
         catch
         {

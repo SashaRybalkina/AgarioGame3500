@@ -11,10 +11,10 @@ public class Program
 
     public static void Main(String[] args)
     {
-        network = new Networking(_logger, onMessage, onDisconnect, onConnect, '\n');
-        network.Connect("localhost", 11000);
-        network.AwaitMessagesAsync();
-        Console.ReadLine();
+        //network = new Networking(_logger, onMessage, onDisconnect, onConnect, '\n');
+        //network.Connect("localhost", 11000);
+        //network.AwaitMessagesAsync();
+        //Console.ReadLine();
     }
     private static async void onConnect(Networking net)
     {
@@ -28,13 +28,13 @@ public class Program
 
     private static async void onMessage(Networking net, string message)
     {
-        Console.WriteLine(message);
-        string foodString = "";
-        if (message.StartsWith("CMD_Food"))
-        {
-            Console.WriteLine(message);
-            foodString = message.Remove(0, 8);
-            String[] ?food = JsonSerializer.Deserialize<String[]>(foodString);
-        }
+        //Console.WriteLine(message);
+        //string foodString = "";
+        //if (message.StartsWith("CMD_Food"))
+        //{
+        //    Console.WriteLine(message);
+        //    foodString = message.Remove(0, 8);
+        //    String[] ?food = JsonSerializer.Deserialize<String[]>(foodString);
+        //}
     }
 }
