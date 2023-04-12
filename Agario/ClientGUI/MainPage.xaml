@@ -19,7 +19,7 @@
 
                <StackLayout Orientation="Horizontal">
                    <Label Text="Your Name: " VerticalOptions="CenterAndExpand"/>
-                   <Entry x:Name="UsernameEntry" Placeholder="What is your name?" VerticalOptions="CenterAndExpand" Text=""/>
+                   <Entry x:Name="UsernameEntry" Placeholder="What is your name?" VerticalOptions="CenterAndExpand"/>
                </StackLayout>
 
                <StackLayout>

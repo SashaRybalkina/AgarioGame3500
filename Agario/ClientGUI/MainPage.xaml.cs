@@ -65,9 +65,16 @@ public partial class MainPage : ContentPage
 
     private async void onConnect(Networking connection)
     {
-        startButton.IsEnabled = false;
+        startButton.IsEnabled = false;       
         if (connection.tcpClient.Connected)
         {
+            connection.Send(Protocols.CMD_Start_Game);
+            connection.logger.LogInformation($"Connected to {connection.tcpClient.Client.RemoteEndPoint}");
+        }
+        else
+        {
+            connection.logger.LogError($"Not Connected. Terminating program");
+            await DisplayAlert("connection error:", "please check port and IPAddress.", "OK");
         }
 
     }
@@ -78,14 +85,10 @@ public partial class MainPage : ContentPage
     }
 
     private async void onMessage(Networking connection, string message)
-    {
-        Console.WriteLine(message);
-        string foodString = "";
-        if (message.StartsWith("CMD_Food"))
+    {               
+        if (message.StartsWith(Protocols.CMD_Food))
         {
-            Console.WriteLine(message);
-            foodString = message.Remove(0, 8);
-            String[]? food = JsonSerializer.Deserialize<String[]>(foodString);
+            worldModel.foods = JsonSerializer.Deserialize<List<Food>>(message.Remove(0, 15));           
         }
     }
 
@@ -93,6 +96,18 @@ public partial class MainPage : ContentPage
     {
         welcomeScreen.IsVisible = false;
         gameScreen.IsVisible = true;
+        try
+        {
+            network = new Networking(new CustomFileLogger(""), onMessage,
+                onDisconnect, onConnect, '\n');
+            string hostname = ServerIPEntry.Text;
+            int port = int.Parse(ServerPortEntry.Text);           
+            network.Connect(hostname, port);
+        }
+        catch
+        {
+            await DisplayAlert("Cannot Connect", "Please retry", "OK");
+        }
     }
 
     private async void PointerChanged(object sender, PointerEventArgs e)

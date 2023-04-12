@@ -19,23 +19,15 @@ public class World
     {
         this.Width = 500;
         this.Height = 500;       
-        players = new List<Player>(3);
-        foods = new List<Food>(15);
+        players = new List<Player>();
+        foods = new List<Food>();
         player = new Player(1, "A", new Vector2(100, 100), 120, 0);
-        IDs = new List<long>();
-        int id = 1;
-        while (id < 16)
-        {
-            Random random = new Random();
-            IDs.Add(id);
-            foods.Add(new Food(id, new Vector2(random.Next(0, (int)this.Width), random.Next(0, (int)this.Height)), random.Next(0, 13), random.Next(100)));
-            id++;
-        }
+        IDs = new List<long>();       
     }
 
     public void AdvanceGameOneStep()
     {
-        player.x = 
+        
         if (foods.Count < 15)
         {
             Random random = new Random();
@@ -51,8 +43,8 @@ public class World
         {
             if (player.location == food.location)
             {
-                foods.Remove(food);
-                player.Mass *= 2;
+                player.Mass += food.Mass;
+                foods.Remove(food);            
             }
         }
     }
