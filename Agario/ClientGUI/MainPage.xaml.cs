@@ -70,13 +70,12 @@ public partial class MainPage : ContentPage
         if (connection.tcpClient.Connected)
         {
             connection.AwaitMessagesAsync();
-            connection.Send(string.Format(Protocols.CMD_Start_Game, "JO"));
+            connection.Send(string.Format(Protocols.CMD_Start_Game, "A"));
             connection.logger.LogInformation($"Connected to {connection.tcpClient.Client.RemoteEndPoint}");
         }
         else
         {
             connection.logger.LogError($"Not Connected. Terminating program");
-            //await DisplayAlert("connection error:", "please check port and IPAddress.", "OK");
         }
 
     }
@@ -99,11 +98,11 @@ public partial class MainPage : ContentPage
         }
         if (message.StartsWith(Protocols.CMD_Update_Players))
         {
-            List<Player> p = JsonSerializer.Deserialize<List<Player>>(message[Protocols.CMD_Update_Players.Length..]);
+            //List<Player> p = JsonSerializer.Deserialize<List<Player>>(message[Protocols.CMD_Update_Players.Length..]);
             List<Player> playersList = JsonSerializer.Deserialize<List<Player>>(message[Protocols.CMD_Update_Players.Length..]);
-            foreach(Player player in playersList)
+            foreach (Player player in playersList)
             {
-                worldModel.players.Add(player.ID, player);
+                worldModel.players.Add(player);
             }
         }
         if (message.StartsWith(Protocols.CMD_Player_Object))
