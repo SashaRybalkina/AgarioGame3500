@@ -6,10 +6,10 @@ namespace AgarioModels
 	public class Player : GameObject
 	{
         private string name { get; }
-        public float x { get; set; }
-        public float y { get; set; }
-        public Player(long id, string name, Vector2 location, float mass, int argbColor)
-            : base (id, location, mass, argbColor)
+
+        
+        public Player(long ID, string name, float X, float Y, float Mass, int ARGBColor)
+            : base (ID, X, Y, Mass, ARGBColor)
         {
             this.name = name;            
         }     

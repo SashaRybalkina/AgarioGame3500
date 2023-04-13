@@ -115,7 +115,7 @@ namespace Communications
                 if (tcpClient.Connected)
                 {
                     //logger.LogInformation($"there one connection going to connected and ID is {this.tcpClient.Client.RemoteEndPoint}");
-                    this.AwaitMessagesAsync(true);
+                   // this.AwaitMessagesAsync(true);
                 }
 
             }

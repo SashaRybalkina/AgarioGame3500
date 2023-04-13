@@ -7,6 +7,7 @@ using AgarioModels;
 using Communications;
 using FileLogger;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Logging.Abstractions;
 using System.Text.Json;
 
 namespace ClientGUI;
@@ -18,8 +19,7 @@ public partial class MainPage : ContentPage
     private bool initialized;
     private System.Timers.Timer timer;
     private World worldModel;
-    Networking network = new Networking(new CustomFileLogger(""), (c,s) => {; },
-        (w) => {; }, (b) => {; }, '\n');
+    Networking network;
 
     public MainPage()
     {
@@ -63,31 +63,33 @@ public partial class MainPage : ContentPage
         Debug.WriteLine("invoking");
     }
 
-    private async void onConnect(Networking connection)
+    private void onConnect(Networking connection)
     {
         if (connection.tcpClient.Connected)
         {
-            connection.Send(Protocols.CMD_Start_Game);
+            connection.AwaitMessagesAsync();
+            connection.Send(string.Format(Protocols.CMD_Start_Game, "JO"));
             connection.logger.LogInformation($"Connected to {connection.tcpClient.Client.RemoteEndPoint}");
         }
         else
         {
             connection.logger.LogError($"Not Connected. Terminating program");
-            await DisplayAlert("connection error:", "please check port and IPAddress.", "OK");
+            //await DisplayAlert("connection error:", "please check port and IPAddress.", "OK");
         }
 
     }
 
-    private async void onDisconnect(Networking connection)
+    private void onDisconnect(Networking connection)
     {
-        connection.logger.LogInformation($"{this.network.tcpClient.Client.RemoteEndPoint} disconnect");
+        ///connection.logger.LogInformation($"{this.network.tcpClient.Client.RemoteEndPoint} disconnect");
     }
 
-    private async void onMessage(Networking connection, string message)
+    private void onMessage(Networking connection, string message)
     {               
         if (message.StartsWith(Protocols.CMD_Food))
         {
-            worldModel.foods = JsonSerializer.Deserialize<List<Food>>(message.Remove(0, 15));           
+            worldModel.foods = JsonSerializer.Deserialize<List<Food>>(message[Protocols.CMD_Food.Length..]);
+            worldModel.players = JsonSerializer.Deserialize<List<Player>>(message[Protocols.CMD_Player_Object.Length..]);
         }
     }
 
@@ -95,7 +97,7 @@ public partial class MainPage : ContentPage
     {      
         try
         {
-            network = new Networking(new CustomFileLogger(UsernameEntry.Text), onMessage,
+            network = new Networking(NullLogger.Instance, onMessage,
                 onDisconnect, onConnect, '\n');
             string hostname = ServerIPEntry.Text;
             int port = int.Parse(ServerPortEntry.Text);

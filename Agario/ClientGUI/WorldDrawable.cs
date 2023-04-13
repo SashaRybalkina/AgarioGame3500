@@ -16,12 +16,17 @@ namespace ClientGUI
         {
             canvas.FillColor = Colors.Red;
             canvas.FillCircle(worldModel.player.location.X, worldModel.player.Y, worldModel.player.Radius);
-            for (int i = 0; i < worldModel.foods.Count(); i++)
+            foreach (Food food in worldModel.foods)
             {
-                canvas.FillColor = Color.FromArgb(worldModel.foods[i].ARGBcolor + "");
-                canvas.FillCircle(worldModel.foods[i].X, worldModel.foods[i].Y, worldModel.foods[i].Radius);
-            }                        
+                object var = Color.FromArgb(food.ARGBColor);
+                canvas.FillColor = Color.FromArgb(food.ARGBColor.ToString());
+                canvas.FillCircle(food.X, food.Y, food.Radius);
+            }
+            foreach (Player player in worldModel.players)
+            {
+                canvas.FillColor = Color.FromArgb(player.ARGBColor.ToString());
+                canvas.FillCircle(player.X, player.Y, player.Radius);
+            }
         }
     }
 }
-
