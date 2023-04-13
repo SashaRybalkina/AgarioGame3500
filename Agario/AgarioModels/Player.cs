@@ -5,13 +5,13 @@ namespace AgarioModels
 {
 	public class Player : GameObject
 	{
-        private string name { get; }
+        private string Name { get; set; }
 
         
-        public Player(long ID, string name, float X, float Y, float Mass, int ARGBColor)
+        public Player(string Name, float X, float Y, int ARGBColor, long ID, float Mass)
             : base (ID, X, Y, Mass, ARGBColor)
         {
-            this.name = name;            
+            this.Name = Name;            
         }     
         
 	}

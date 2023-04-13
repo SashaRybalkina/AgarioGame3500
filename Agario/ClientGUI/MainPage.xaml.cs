@@ -94,12 +94,23 @@ public partial class MainPage : ContentPage
         }
         else if (message.StartsWith(Protocols.CMD_HeartBeat))
         {
-            connection.Send(string.Format(Protocols.CMD_Move, x, y));
+            string toSend = string.Format(Protocols.CMD_Move, x, y);
+            connection.Send(toSend);
         }
         if (message.StartsWith(Protocols.CMD_Update_Players))
         {
-            worldModel.players = JsonSerializer.Deserialize<List<Player>>(message[Protocols.CMD_Player_Object.Length..]);
+            List<Player> p = JsonSerializer.Deserialize<List<Player>>(message[Protocols.CMD_Update_Players.Length..]);
+            worldModel.players = JsonSerializer.Deserialize<List<Player>>(message[Protocols.CMD_Update_Players.Length..]);
         }
+        if (message.StartsWith(Protocols.CMD_Player_Object))
+        {
+            long PlayerID = JsonSerializer.Deserialize<long>(message[Protocols.CMD_Player_Object.Length..]);
+        }
+        //if (message.StartsWith(Protocols.CMD_Eaten_Food))
+        //{
+        //    int[] eaten = JsonSerializer.Deserialize<int[]>(message[Protocols.CMD_Player_Object.Length..]);
+        //    foreach (int )
+        //}
     }
 
     private async void onStartButtonClicked(object sender, EventArgs e)

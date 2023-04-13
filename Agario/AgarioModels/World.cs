@@ -18,9 +18,9 @@ public class World
 
     public World()
     {
-        this.Width = 800;
-        this.Height = 800;
-        player = new Player(1, "A", 100, 100, 120, 0);    
+        this.Width = 5000;
+        this.Height = 5000;
+        player = new Player("A", 100, 100, 100, 120, 10);    
     }
 
     public void AdvanceGameOneStep()
