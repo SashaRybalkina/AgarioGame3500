@@ -19,6 +19,8 @@ public partial class MainPage : ContentPage
     private bool initialized;
     private System.Timers.Timer timer;
     private World worldModel;
+    private int x;
+    private int y;
     Networking network;
 
     public MainPage()
@@ -89,6 +91,13 @@ public partial class MainPage : ContentPage
         if (message.StartsWith(Protocols.CMD_Food))
         {
             worldModel.foods = JsonSerializer.Deserialize<List<Food>>(message[Protocols.CMD_Food.Length..]);
+        }
+        else if (message.StartsWith(Protocols.CMD_HeartBeat))
+        {
+            connection.Send(string.Format(Protocols.CMD_Move, x, y));
+        }
+        if (message.StartsWith(Protocols.CMD_Update_Players))
+        {
             worldModel.players = JsonSerializer.Deserialize<List<Player>>(message[Protocols.CMD_Player_Object.Length..]);
         }
     }
@@ -115,6 +124,8 @@ public partial class MainPage : ContentPage
     private async void PointerChanged(object sender, PointerEventArgs e)
     {       
         Point ? position = e.GetPosition((View)sender);
+        x = (int)(position.Value.X * 5000 / 800);
+        y = (int)(position.Value.Y * 5000 / 800);
     }
 
     private async void OnTap(object sender, PointerEventArgs e)

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text.Json;
 using AgarioModels;
 
 namespace ClientGUI
@@ -18,13 +19,12 @@ namespace ClientGUI
             canvas.FillCircle(worldModel.player.location.X, worldModel.player.Y, worldModel.player.Radius);
             foreach (Food food in worldModel.foods)
             {
-                object var = Color.FromArgb(food.ARGBColor);
-                canvas.FillColor = Color.FromArgb(food.ARGBColor.ToString());
+                canvas.FillColor = Color.FromInt(food.ARGBColor);
                 canvas.FillCircle(food.X, food.Y, food.Radius);
             }
             foreach (Player player in worldModel.players)
             {
-                canvas.FillColor = Color.FromArgb(player.ARGBColor.ToString());
+                canvas.FillColor = Color.FromInt(player.ARGBColor);
                 canvas.FillCircle(player.X, player.Y, player.Radius);
             }
         }
