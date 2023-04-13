@@ -8,19 +8,20 @@ public class World
 {
     public readonly double Width;
     public readonly double Height;
-    public List<Player> players;
+    public Dictionary<long, Player> players;
     public Player player;
     public Vector2 Direction;
     public List<Food> foods;
     public Food food;
     public CustomFileLogger logger;
+    public long playerID;
     private List<long> IDs;
 
     public World()
     {
         this.Width = 5000;
         this.Height = 5000;
-        player = new Player("A", 100, 100, 100, 120, 10);    
+        player = players[playerID];  
     }
 
     public void AdvanceGameOneStep()

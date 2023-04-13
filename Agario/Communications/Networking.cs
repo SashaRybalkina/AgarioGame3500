@@ -148,7 +148,7 @@ namespace Communications
                     int total = await stream.ReadAsync(buffer);
                     string current_data = Encoding.UTF8.GetString(buffer, 0, total);
                     dataBacklog.Append(current_data);
-                    logger.LogInformation($"  Received {total} new bytes for a total of {dataBacklog.Length}.");
+                    ///logger.LogInformation($"  Received {total} new bytes for a total of {dataBacklog.Length}.");
                     this.checkForMessage(dataBacklog);
 
 
@@ -158,7 +158,7 @@ namespace Communications
             }
             catch (Exception ex)
             {
-                logger.LogInformation($"Exception wait message{ex}");
+                ///logger.LogInformation($"Exception wait message{ex}");
                 handleDisconnect(this);
             }
         }

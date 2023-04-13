@@ -34,8 +34,8 @@ public partial class MainPage : ContentPage
     private void OnTimerElapsed()
     {
         var random = new Random();
-        CircleCenter = new Vector2(random.Next(0, 100), random.Next(0, 100));
-        Direction = new Vector2(random.Next(-1, 2), random.Next(-1, 2));
+        CircleCenter = new Vector2(x, y);
+        //Direction = new Vector2(random.Next(-1, 2), random.Next(-1, 2));
     }
 
     protected override void OnSizeAllocated(double width, double height)
@@ -100,11 +100,15 @@ public partial class MainPage : ContentPage
         if (message.StartsWith(Protocols.CMD_Update_Players))
         {
             List<Player> p = JsonSerializer.Deserialize<List<Player>>(message[Protocols.CMD_Update_Players.Length..]);
-            worldModel.players = JsonSerializer.Deserialize<List<Player>>(message[Protocols.CMD_Update_Players.Length..]);
+            List<Player> playersList = JsonSerializer.Deserialize<List<Player>>(message[Protocols.CMD_Update_Players.Length..]);
+            foreach(Player player in playersList)
+            {
+                worldModel.players.Add(player.ID, player);
+            }
         }
         if (message.StartsWith(Protocols.CMD_Player_Object))
         {
-            long PlayerID = JsonSerializer.Deserialize<long>(message[Protocols.CMD_Player_Object.Length..]);
+            worldModel.playerID = JsonSerializer.Deserialize<long>(message[Protocols.CMD_Player_Object.Length..]);
         }
         //if (message.StartsWith(Protocols.CMD_Eaten_Food))
         //{
