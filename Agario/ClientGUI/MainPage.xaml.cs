@@ -129,12 +129,12 @@ public partial class MainPage : ContentPage
         y = (int)(position.Value.Y * 5000 / 800);
     }
 
-    private async void OnTap(object sender, PointerEventArgs e)
+    private async void OnTap(object sender, TappedEventArgs e)
     {
 
     }
 
-    private async void PanUpdated(object sender, PointerEventArgs e)
+    private async void PanUpdated(object sender, PanUpdatedEventArgs e)
     {
 
     }

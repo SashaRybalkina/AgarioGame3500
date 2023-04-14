@@ -22,6 +22,8 @@ public class World
         this.Width = 5000;
         this.Height = 5000;
         player = new Player("A", 100, 100, 100, 120, 10);
+        foods = new List<Food>();
+        players = new List<Player>();
     }
 
     public void AdvanceGameOneStep()

@@ -1,26 +1,26 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 25.0.1704.2
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33516.290
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{62750638-F116-43D4-BEAC-5490F2DEE571}"
 	ProjectSection(SolutionItems) = preProject
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientGUI", "ClientGUI\ClientGUI.csproj", "{502501CE-F865-4CFB-919C-E75A90B434FC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClientGUI", "ClientGUI\ClientGUI.csproj", "{502501CE-F865-4CFB-919C-E75A90B434FC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logger", "Logger\Logger.csproj", "{9C3ED93C-C105-4A77-9A40-A50109FC1C03}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Logger", "Logger\Logger.csproj", "{9C3ED93C-C105-4A77-9A40-A50109FC1C03}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AgarioModels", "AgarioModels\AgarioModels.csproj", "{34D618BC-42D3-4CF1-B3EF-B06E856A97B6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AgarioModels", "AgarioModels\AgarioModels.csproj", "{34D618BC-42D3-4CF1-B3EF-B06E856A97B6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TowardAgarioStepOne", "TowardAgarioStepOne\TowardAgarioStepOne.csproj", "{25D1ABEE-447A-45D1-B950-A677A37FA25D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TowardAgarioStepOne", "TowardAgarioStepOne\TowardAgarioStepOne.csproj", "{25D1ABEE-447A-45D1-B950-A677A37FA25D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TowardAgarioStepTwo", "TowardAgarioStepTwo\TowardAgarioStepTwo.csproj", "{E4FC1CAF-3BAD-460F-8A1D-24DEA7C73729}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TowardAgarioStepTwo", "TowardAgarioStepTwo\TowardAgarioStepTwo.csproj", "{E4FC1CAF-3BAD-460F-8A1D-24DEA7C73729}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TowardAgarioStepThree", "TowardAgarioStepThree\TowardAgarioStepThree.csproj", "{30D3DDDB-1E14-4597-AD73-F3EE7F822000}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TowardAgarioStepThree", "TowardAgarioStepThree\TowardAgarioStepThree.csproj", "{30D3DDDB-1E14-4597-AD73-F3EE7F822000}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library", "Library\Library.csproj", "{F99EBD39-E091-47BA-9A0B-AC3A80EC4A43}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Library", "Library\Library.csproj", "{F99EBD39-E091-47BA-9A0B-AC3A80EC4A43}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -30,6 +30,7 @@ Global
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{502501CE-F865-4CFB-919C-E75A90B434FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{502501CE-F865-4CFB-919C-E75A90B434FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{502501CE-F865-4CFB-919C-E75A90B434FC}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
 		{502501CE-F865-4CFB-919C-E75A90B434FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{502501CE-F865-4CFB-919C-E75A90B434FC}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9C3ED93C-C105-4A77-9A40-A50109FC1C03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU

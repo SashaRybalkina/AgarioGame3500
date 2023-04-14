@@ -11,6 +11,7 @@ namespace ClientGUI
         public WorldDrawable(ref World worldModel)
         {
             this.worldModel = worldModel;
+         
         }
 
         public void Draw(ICanvas canvas, RectF dirtyRect)
