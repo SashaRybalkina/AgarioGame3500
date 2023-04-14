@@ -1938,17 +1938,14 @@
           "bin/placeholder/AgarioModels.dll": {}
         }
       },
-      "Communications/1.0.0": {
+      "Library/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
-        "dependencies": {
-          "Microsoft.Extensions.Logging": "7.0.0"
-        },
         "compile": {
-          "bin/placeholder/Communications.dll": {}
+          "bin/placeholder/Library.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Communications.dll": {}
+          "bin/placeholder/Library.dll": {}
         }
       },
       "Logger/1.0.0": {
@@ -3902,17 +3899,14 @@
           "bin/placeholder/AgarioModels.dll": {}
         }
       },
-      "Communications/1.0.0": {
+      "Library/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
-        "dependencies": {
-          "Microsoft.Extensions.Logging": "7.0.0"
-        },
         "compile": {
-          "bin/placeholder/Communications.dll": {}
+          "bin/placeholder/Library.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Communications.dll": {}
+          "bin/placeholder/Library.dll": {}
         }
       },
       "Logger/1.0.0": {
@@ -5866,17 +5860,14 @@
           "bin/placeholder/AgarioModels.dll": {}
         }
       },
-      "Communications/1.0.0": {
+      "Library/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
-        "dependencies": {
-          "Microsoft.Extensions.Logging": "7.0.0"
-        },
         "compile": {
-          "bin/placeholder/Communications.dll": {}
+          "bin/placeholder/Library.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Communications.dll": {}
+          "bin/placeholder/Library.dll": {}
         }
       },
       "Logger/1.0.0": {
@@ -7830,17 +7821,14 @@
           "bin/placeholder/AgarioModels.dll": {}
         }
       },
-      "Communications/1.0.0": {
+      "Library/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
-        "dependencies": {
-          "Microsoft.Extensions.Logging": "7.0.0"
-        },
         "compile": {
-          "bin/placeholder/Communications.dll": {}
+          "bin/placeholder/Library.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Communications.dll": {}
+          "bin/placeholder/Library.dll": {}
         }
       },
       "Logger/1.0.0": {
@@ -9794,17 +9782,14 @@
           "bin/placeholder/AgarioModels.dll": {}
         }
       },
-      "Communications/1.0.0": {
+      "Library/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
-        "dependencies": {
-          "Microsoft.Extensions.Logging": "7.0.0"
-        },
         "compile": {
-          "bin/placeholder/Communications.dll": {}
+          "bin/placeholder/Library.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Communications.dll": {}
+          "bin/placeholder/Library.dll": {}
         }
       },
       "Logger/1.0.0": {
@@ -11758,17 +11743,14 @@
           "bin/placeholder/AgarioModels.dll": {}
         }
       },
-      "Communications/1.0.0": {
+      "Library/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
-        "dependencies": {
-          "Microsoft.Extensions.Logging": "7.0.0"
-        },
         "compile": {
-          "bin/placeholder/Communications.dll": {}
+          "bin/placeholder/Library.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Communications.dll": {}
+          "bin/placeholder/Library.dll": {}
         }
       },
       "Logger/1.0.0": {
@@ -13722,17 +13704,14 @@
           "bin/placeholder/AgarioModels.dll": {}
         }
       },
-      "Communications/1.0.0": {
+      "Library/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
-        "dependencies": {
-          "Microsoft.Extensions.Logging": "7.0.0"
-        },
         "compile": {
-          "bin/placeholder/Communications.dll": {}
+          "bin/placeholder/Library.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Communications.dll": {}
+          "bin/placeholder/Library.dll": {}
         }
       },
       "Logger/1.0.0": {
@@ -13945,17 +13924,14 @@
           "bin/placeholder/AgarioModels.dll": {}
         }
       },
-      "Communications/1.0.0": {
+      "Library/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
-        "dependencies": {
-          "Microsoft.Extensions.Logging": "7.0.0"
-        },
         "compile": {
-          "bin/placeholder/Communications.dll": {}
+          "bin/placeholder/Library.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Communications.dll": {}
+          "bin/placeholder/Library.dll": {}
         }
       },
       "Logger/1.0.0": {
@@ -14168,17 +14144,14 @@
           "bin/placeholder/AgarioModels.dll": {}
         }
       },
-      "Communications/1.0.0": {
+      "Library/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
-        "dependencies": {
-          "Microsoft.Extensions.Logging": "7.0.0"
-        },
         "compile": {
-          "bin/placeholder/Communications.dll": {}
+          "bin/placeholder/Library.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Communications.dll": {}
+          "bin/placeholder/Library.dll": {}
         }
       },
       "Logger/1.0.0": {
@@ -14391,17 +14364,14 @@
           "bin/placeholder/AgarioModels.dll": {}
         }
       },
-      "Communications/1.0.0": {
+      "Library/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
-        "dependencies": {
-          "Microsoft.Extensions.Logging": "7.0.0"
-        },
         "compile": {
-          "bin/placeholder/Communications.dll": {}
+          "bin/placeholder/Library.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Communications.dll": {}
+          "bin/placeholder/Library.dll": {}
         }
       },
       "Logger/1.0.0": {
@@ -14614,17 +14584,14 @@
           "bin/placeholder/AgarioModels.dll": {}
         }
       },
-      "Communications/1.0.0": {
+      "Library/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
-        "dependencies": {
-          "Microsoft.Extensions.Logging": "7.0.0"
-        },
         "compile": {
-          "bin/placeholder/Communications.dll": {}
+          "bin/placeholder/Library.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Communications.dll": {}
+          "bin/placeholder/Library.dll": {}
         }
       },
       "Logger/1.0.0": {
@@ -14837,17 +14804,14 @@
           "bin/placeholder/AgarioModels.dll": {}
         }
       },
-      "Communications/1.0.0": {
+      "Library/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
-        "dependencies": {
-          "Microsoft.Extensions.Logging": "7.0.0"
-        },
         "compile": {
-          "bin/placeholder/Communications.dll": {}
+          "bin/placeholder/Library.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Communications.dll": {}
+          "bin/placeholder/Library.dll": {}
         }
       },
       "Logger/1.0.0": {
@@ -15060,17 +15024,14 @@
           "bin/placeholder/AgarioModels.dll": {}
         }
       },
-      "Communications/1.0.0": {
+      "Library/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
-        "dependencies": {
-          "Microsoft.Extensions.Logging": "7.0.0"
-        },
         "compile": {
-          "bin/placeholder/Communications.dll": {}
+          "bin/placeholder/Library.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Communications.dll": {}
+          "bin/placeholder/Library.dll": {}
         }
       },
       "Logger/1.0.0": {
@@ -15283,17 +15244,14 @@
           "bin/placeholder/AgarioModels.dll": {}
         }
       },
-      "Communications/1.0.0": {
+      "Library/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
-        "dependencies": {
-          "Microsoft.Extensions.Logging": "7.0.0"
-        },
         "compile": {
-          "bin/placeholder/Communications.dll": {}
+          "bin/placeholder/Library.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Communications.dll": {}
+          "bin/placeholder/Library.dll": {}
         }
       },
       "Logger/1.0.0": {
@@ -15506,17 +15464,14 @@
           "bin/placeholder/AgarioModels.dll": {}
         }
       },
-      "Communications/1.0.0": {
+      "Library/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
-        "dependencies": {
-          "Microsoft.Extensions.Logging": "7.0.0"
-        },
         "compile": {
-          "bin/placeholder/Communications.dll": {}
+          "bin/placeholder/Library.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Communications.dll": {}
+          "bin/placeholder/Library.dll": {}
         }
       },
       "Logger/1.0.0": {
@@ -15729,17 +15684,14 @@
           "bin/placeholder/AgarioModels.dll": {}
         }
       },
-      "Communications/1.0.0": {
+      "Library/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
-        "dependencies": {
-          "Microsoft.Extensions.Logging": "7.0.0"
-        },
         "compile": {
-          "bin/placeholder/Communications.dll": {}
+          "bin/placeholder/Library.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Communications.dll": {}
+          "bin/placeholder/Library.dll": {}
         }
       },
       "Logger/1.0.0": {
@@ -15952,17 +15904,14 @@
           "bin/placeholder/AgarioModels.dll": {}
         }
       },
-      "Communications/1.0.0": {
+      "Library/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
-        "dependencies": {
-          "Microsoft.Extensions.Logging": "7.0.0"
-        },
         "compile": {
-          "bin/placeholder/Communications.dll": {}
+          "bin/placeholder/Library.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Communications.dll": {}
+          "bin/placeholder/Library.dll": {}
         }
       },
       "Logger/1.0.0": {
@@ -16175,17 +16124,14 @@
           "bin/placeholder/AgarioModels.dll": {}
         }
       },
-      "Communications/1.0.0": {
+      "Library/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
-        "dependencies": {
-          "Microsoft.Extensions.Logging": "7.0.0"
-        },
         "compile": {
-          "bin/placeholder/Communications.dll": {}
+          "bin/placeholder/Library.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Communications.dll": {}
+          "bin/placeholder/Library.dll": {}
         }
       },
       "Logger/1.0.0": {
@@ -16398,17 +16344,14 @@
           "bin/placeholder/AgarioModels.dll": {}
         }
       },
-      "Communications/1.0.0": {
+      "Library/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
-        "dependencies": {
-          "Microsoft.Extensions.Logging": "7.0.0"
-        },
         "compile": {
-          "bin/placeholder/Communications.dll": {}
+          "bin/placeholder/Library.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Communications.dll": {}
+          "bin/placeholder/Library.dll": {}
         }
       },
       "Logger/1.0.0": {
@@ -16621,17 +16564,14 @@
           "bin/placeholder/AgarioModels.dll": {}
         }
       },
-      "Communications/1.0.0": {
+      "Library/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
-        "dependencies": {
-          "Microsoft.Extensions.Logging": "7.0.0"
-        },
         "compile": {
-          "bin/placeholder/Communications.dll": {}
+          "bin/placeholder/Library.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Communications.dll": {}
+          "bin/placeholder/Library.dll": {}
         }
       },
       "Logger/1.0.0": {
@@ -16844,17 +16784,14 @@
           "bin/placeholder/AgarioModels.dll": {}
         }
       },
-      "Communications/1.0.0": {
+      "Library/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
-        "dependencies": {
-          "Microsoft.Extensions.Logging": "7.0.0"
-        },
         "compile": {
-          "bin/placeholder/Communications.dll": {}
+          "bin/placeholder/Library.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Communications.dll": {}
+          "bin/placeholder/Library.dll": {}
         }
       },
       "Logger/1.0.0": {
@@ -19230,10 +19167,10 @@
       "path": "../AgarioModels/AgarioModels.csproj",
       "msbuildProject": "../AgarioModels/AgarioModels.csproj"
     },
-    "Communications/1.0.0": {
+    "Library/1.0.0": {
       "type": "project",
-      "path": "../Communications/Communications.csproj",
-      "msbuildProject": "../Communications/Communications.csproj"
+      "path": "../Library/Library.csproj",
+      "msbuildProject": "../Library/Library.csproj"
     },
     "Logger/1.0.0": {
       "type": "project",
@@ -19244,8 +19181,7 @@
   "projectFileDependencyGroups": {
     "net7.0-android33.0": [
       "AgarioModels >= 1.0.0",
-      "Communications >= 1.0.0",
-      "Logger >= 1.0.0",
+      "Library >= 1.0.0",
       "Microsoft.Extensions.Configuration >= 7.0.0",
       "Microsoft.Extensions.DependencyInjection >= 7.0.0",
       "Microsoft.Extensions.Logging >= 7.0.0",
@@ -19266,8 +19202,7 @@
     ],
     "net7.0-ios16.1": [
       "AgarioModels >= 1.0.0",
-      "Communications >= 1.0.0",
-      "Logger >= 1.0.0",
+      "Library >= 1.0.0",
       "Microsoft.Extensions.Configuration >= 7.0.0",
       "Microsoft.Extensions.DependencyInjection >= 7.0.0",
       "Microsoft.Extensions.Logging >= 7.0.0",
@@ -19277,8 +19212,7 @@
     ],
     "net7.0-maccatalyst16.1": [
       "AgarioModels >= 1.0.0",
-      "Communications >= 1.0.0",
-      "Logger >= 1.0.0",
+      "Library >= 1.0.0",
       "Microsoft.Extensions.Configuration >= 7.0.0",
       "Microsoft.Extensions.DependencyInjection >= 7.0.0",
       "Microsoft.Extensions.Logging >= 7.0.0",
@@ -19319,11 +19253,8 @@
             "/Users/sasharybalkina/Projects/AS8/Agario/AgarioModels/AgarioModels.csproj": {
               "projectPath": "/Users/sasharybalkina/Projects/AS8/Agario/AgarioModels/AgarioModels.csproj"
             },
-            "/Users/sasharybalkina/Projects/AS8/Agario/Communications/Communications.csproj": {
-              "projectPath": "/Users/sasharybalkina/Projects/AS8/Agario/Communications/Communications.csproj"
-            },
-            "/Users/sasharybalkina/Projects/AS8/Agario/Logger/Logger.csproj": {
-              "projectPath": "/Users/sasharybalkina/Projects/AS8/Agario/Logger/Logger.csproj"
+            "/Users/sasharybalkina/Projects/AS8/Agario/Library/Library.csproj": {
+              "projectPath": "/Users/sasharybalkina/Projects/AS8/Agario/Library/Library.csproj"
             }
           }
         },
@@ -19333,11 +19264,8 @@
             "/Users/sasharybalkina/Projects/AS8/Agario/AgarioModels/AgarioModels.csproj": {
               "projectPath": "/Users/sasharybalkina/Projects/AS8/Agario/AgarioModels/AgarioModels.csproj"
             },
-            "/Users/sasharybalkina/Projects/AS8/Agario/Communications/Communications.csproj": {
-              "projectPath": "/Users/sasharybalkina/Projects/AS8/Agario/Communications/Communications.csproj"
-            },
-            "/Users/sasharybalkina/Projects/AS8/Agario/Logger/Logger.csproj": {
-              "projectPath": "/Users/sasharybalkina/Projects/AS8/Agario/Logger/Logger.csproj"
+            "/Users/sasharybalkina/Projects/AS8/Agario/Library/Library.csproj": {
+              "projectPath": "/Users/sasharybalkina/Projects/AS8/Agario/Library/Library.csproj"
             }
           }
         },
@@ -19347,11 +19275,8 @@
             "/Users/sasharybalkina/Projects/AS8/Agario/AgarioModels/AgarioModels.csproj": {
               "projectPath": "/Users/sasharybalkina/Projects/AS8/Agario/AgarioModels/AgarioModels.csproj"
             },
-            "/Users/sasharybalkina/Projects/AS8/Agario/Communications/Communications.csproj": {
-              "projectPath": "/Users/sasharybalkina/Projects/AS8/Agario/Communications/Communications.csproj"
-            },
-            "/Users/sasharybalkina/Projects/AS8/Agario/Logger/Logger.csproj": {
-              "projectPath": "/Users/sasharybalkina/Projects/AS8/Agario/Logger/Logger.csproj"
+            "/Users/sasharybalkina/Projects/AS8/Agario/Library/Library.csproj": {
+              "projectPath": "/Users/sasharybalkina/Projects/AS8/Agario/Library/Library.csproj"
             }
           }
         }

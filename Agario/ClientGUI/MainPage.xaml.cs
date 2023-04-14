@@ -4,8 +4,8 @@ using Microsoft.Maui.Graphics;
 using System.Diagnostics;
 using System.Timers;
 using AgarioModels;
-using Communications;
 using FileLogger;
+using Communications;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Logging.Abstractions;
 using System.Text.Json;
@@ -67,17 +67,8 @@ public partial class MainPage : ContentPage
 
     private void onConnect(Networking connection)
     {
-        if (connection.tcpClient.Connected)
-        {
-            connection.AwaitMessagesAsync();
-            connection.Send(string.Format(Protocols.CMD_Start_Game, "A"));
-            connection.logger.LogInformation($"Connected to {connection.tcpClient.Client.RemoteEndPoint}");
-        }
-        else
-        {
-            connection.logger.LogError($"Not Connected. Terminating program");
-        }
-
+        connection.AwaitMessagesAsync();
+        connection.Send(string.Format(Protocols.CMD_Start_Game, "A"));
     }
 
     private void onDisconnect(Networking connection)
@@ -99,11 +90,7 @@ public partial class MainPage : ContentPage
         if (message.StartsWith(Protocols.CMD_Update_Players))
         {
             //List<Player> p = JsonSerializer.Deserialize<List<Player>>(message[Protocols.CMD_Update_Players.Length..]);
-            List<Player> playersList = JsonSerializer.Deserialize<List<Player>>(message[Protocols.CMD_Update_Players.Length..]);
-            foreach (Player player in playersList)
-            {
-                worldModel.players.Add(player);
-            }
+            worldModel.players = JsonSerializer.Deserialize<List<Player>>(message[Protocols.CMD_Update_Players.Length..]);
         }
         if (message.StartsWith(Protocols.CMD_Player_Object))
         {
@@ -120,8 +107,8 @@ public partial class MainPage : ContentPage
     {      
         try
         {
-            network = new Networking(NullLogger.Instance, onMessage,
-                onDisconnect, onConnect, '\n');
+            network = new Networking(NullLogger.Instance, onConnect,
+                onDisconnect, onMessage, '\n');
             string hostname = ServerIPEntry.Text;
             int port = int.Parse(ServerPortEntry.Text);
             network.ID = UsernameEntry.Text;

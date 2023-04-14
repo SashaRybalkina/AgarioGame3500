@@ -91,11 +91,8 @@
               "/Users/sasharybalkina/Projects/AS8/Agario/AgarioModels/AgarioModels.csproj": {
                 "projectPath": "/Users/sasharybalkina/Projects/AS8/Agario/AgarioModels/AgarioModels.csproj"
               },
-              "/Users/sasharybalkina/Projects/AS8/Agario/Communications/Communications.csproj": {
-                "projectPath": "/Users/sasharybalkina/Projects/AS8/Agario/Communications/Communications.csproj"
-              },
-              "/Users/sasharybalkina/Projects/AS8/Agario/Logger/Logger.csproj": {
-                "projectPath": "/Users/sasharybalkina/Projects/AS8/Agario/Logger/Logger.csproj"
+              "/Users/sasharybalkina/Projects/AS8/Agario/Library/Library.csproj": {
+                "projectPath": "/Users/sasharybalkina/Projects/AS8/Agario/Library/Library.csproj"
               }
             }
           },
@@ -105,11 +102,8 @@
               "/Users/sasharybalkina/Projects/AS8/Agario/AgarioModels/AgarioModels.csproj": {
                 "projectPath": "/Users/sasharybalkina/Projects/AS8/Agario/AgarioModels/AgarioModels.csproj"
               },
-              "/Users/sasharybalkina/Projects/AS8/Agario/Communications/Communications.csproj": {
-                "projectPath": "/Users/sasharybalkina/Projects/AS8/Agario/Communications/Communications.csproj"
-              },
-              "/Users/sasharybalkina/Projects/AS8/Agario/Logger/Logger.csproj": {
-                "projectPath": "/Users/sasharybalkina/Projects/AS8/Agario/Logger/Logger.csproj"
+              "/Users/sasharybalkina/Projects/AS8/Agario/Library/Library.csproj": {
+                "projectPath": "/Users/sasharybalkina/Projects/AS8/Agario/Library/Library.csproj"
               }
             }
           },
@@ -119,11 +113,8 @@
               "/Users/sasharybalkina/Projects/AS8/Agario/AgarioModels/AgarioModels.csproj": {
                 "projectPath": "/Users/sasharybalkina/Projects/AS8/Agario/AgarioModels/AgarioModels.csproj"
               },
-              "/Users/sasharybalkina/Projects/AS8/Agario/Communications/Communications.csproj": {
-                "projectPath": "/Users/sasharybalkina/Projects/AS8/Agario/Communications/Communications.csproj"
-              },
-              "/Users/sasharybalkina/Projects/AS8/Agario/Logger/Logger.csproj": {
-                "projectPath": "/Users/sasharybalkina/Projects/AS8/Agario/Logger/Logger.csproj"
+              "/Users/sasharybalkina/Projects/AS8/Agario/Library/Library.csproj": {
+                "projectPath": "/Users/sasharybalkina/Projects/AS8/Agario/Library/Library.csproj"
               }
             }
           }
@@ -402,14 +393,14 @@
         }
       }
     },
-    "/Users/sasharybalkina/Projects/AS8/Agario/Communications/Communications.csproj": {
+    "/Users/sasharybalkina/Projects/AS8/Agario/Library/Library.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/sasharybalkina/Projects/AS8/Agario/Communications/Communications.csproj",
-        "projectName": "Communications",
-        "projectPath": "/Users/sasharybalkina/Projects/AS8/Agario/Communications/Communications.csproj",
+        "projectUniqueName": "/Users/sasharybalkina/Projects/AS8/Agario/Library/Library.csproj",
+        "projectName": "Library",
+        "projectPath": "/Users/sasharybalkina/Projects/AS8/Agario/Library/Library.csproj",
         "packagesPath": "/Users/sasharybalkina/.nuget/packages/",
-        "outputPath": "/Users/sasharybalkina/Projects/AS8/Agario/Communications/obj/",
+        "outputPath": "/Users/sasharybalkina/Projects/AS8/Agario/Library/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/sasharybalkina/.nuget/NuGet/NuGet.Config"
@@ -436,12 +427,6 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
-          "dependencies": {
-            "Microsoft.Extensions.Logging": {
-              "target": "Package",
-              "version": "[7.0.0, )"
-            }
-          },
           "imports": [
             "net461",
             "net462",
