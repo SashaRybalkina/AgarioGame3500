@@ -21,15 +21,13 @@ public class World
     {
         this.Width = 5000;
         this.Height = 5000;
-        player = new Player("A", 100, 100, 100, 120, 10);
-        foods = new List<Food>();
-        players = new List<Player>();
+        player = new Player("A", 1000, 1000, 100, 120, 1000);
     }
 
     public void AdvanceGameOneStep()
     {
-        player.X += Direction.X/200;
-        player.Y += Direction.Y/200;
+        //player.X += Direction.X/1000;
+        //player.Y += Direction.Y/1000;
 
         //if (foods.Count < 15)
         //{
@@ -44,7 +42,7 @@ public class World
         //}
         //foreach (Food food in foods)
         //{
-        //    if (player.location == food.location)
+        //    if (player.X == food.X && player.Y == food.Y)
         //    {
         //        player.Mass += food.Mass;
         //        foods.Remove(food);

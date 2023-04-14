@@ -4,11 +4,13 @@ using Microsoft.Maui.Graphics;
 using System.Diagnostics;
 using System.Timers;
 using AgarioModels;
-using FileLogger;
 using Communications;
+using FileLogger;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Logging.Abstractions;
 using System.Text.Json;
+using System;
+using System.Collections.Generic;
 
 namespace ClientGUI;
 
@@ -61,14 +63,23 @@ public partial class MainPage : ContentPage
     private void GameStep(object state, ElapsedEventArgs e)
     {
         worldModel.AdvanceGameOneStep();
-        Dispatcher.Dispatch(PlaySurface.Invalidate);       
+        Dispatcher.Dispatch(PlaySurface.Invalidate);
         Debug.WriteLine("invoking");
     }
 
     private void onConnect(Networking connection)
     {
-        connection.AwaitMessagesAsync();
-        connection.Send(string.Format(Protocols.CMD_Start_Game, "A"));
+        if (connection.tcpClient.Connected)
+        {
+            connection.AwaitMessagesAsync();
+            connection.Send(string.Format(Protocols.CMD_Start_Game, "sexy ass bitch"));
+            connection.logger.LogInformation($"Connected to {connection.tcpClient.Client.RemoteEndPoint}");
+        }
+        else
+        {
+            connection.logger.LogError($"Not Connected. Terminating program");
+        }
+
     }
 
     private void onDisconnect(Networking connection)
@@ -77,38 +88,32 @@ public partial class MainPage : ContentPage
     }
 
     private void onMessage(Networking connection, string message)
-    {               
+    {
         if (message.StartsWith(Protocols.CMD_Food))
         {
             worldModel.foods = JsonSerializer.Deserialize<List<Food>>(message[Protocols.CMD_Food.Length..]);
         }
-        else if (message.StartsWith(Protocols.CMD_HeartBeat))
+        if (message.StartsWith(Protocols.CMD_HeartBeat))
         {
             string toSend = string.Format(Protocols.CMD_Move, x, y);
             connection.Send(toSend);
         }
         if (message.StartsWith(Protocols.CMD_Update_Players))
         {
-            //List<Player> p = JsonSerializer.Deserialize<List<Player>>(message[Protocols.CMD_Update_Players.Length..]);
             worldModel.players = JsonSerializer.Deserialize<List<Player>>(message[Protocols.CMD_Update_Players.Length..]);
         }
         if (message.StartsWith(Protocols.CMD_Player_Object))
         {
             worldModel.playerID = JsonSerializer.Deserialize<long>(message[Protocols.CMD_Player_Object.Length..]);
         }
-        //if (message.StartsWith(Protocols.CMD_Eaten_Food))
-        //{
-        //    int[] eaten = JsonSerializer.Deserialize<int[]>(message[Protocols.CMD_Player_Object.Length..]);
-        //    foreach (int )
-        //}
     }
 
     private async void onStartButtonClicked(object sender, EventArgs e)
-    {      
+    {
         try
         {
-            network = new Networking(NullLogger.Instance, onConnect,
-                onDisconnect, onMessage, '\n');
+            network = new Networking(NullLogger.Instance, onMessage,
+                onDisconnect, onConnect, '\n');
             string hostname = ServerIPEntry.Text;
             int port = int.Parse(ServerPortEntry.Text);
             network.ID = UsernameEntry.Text;
@@ -123,18 +128,19 @@ public partial class MainPage : ContentPage
     }
 
     private async void PointerChanged(object sender, PointerEventArgs e)
-    {       
-        Point ? position = e.GetPosition((View)sender);
-        x = (int)(position.Value.X * 5000 / 800);
-        y = (int)(position.Value.Y * 5000 / 800);
+    {
+        Point? position = e.GetPosition((View)sender);
+        x = (int)(position.Value.X); //* 5000 / 800);
+        y = (int)(position.Value.Y); //* 5000 / 800);
+        worldModel.Direction = new Vector2(x, y);
     }
 
-    private async void OnTap(object sender, TappedEventArgs e)
+    private async void OnTap(object sender, PointerEventArgs e)
     {
 
     }
 
-    private async void PanUpdated(object sender, PanUpdatedEventArgs e)
+    private async void PanUpdated(object sender, PointerEventArgs e)
     {
 
     }

@@ -38,7 +38,7 @@
                 <GraphicsView 
                 x:Name="PlaySurface"
                 VerticalOptions="Center"
-                BackgroundColor="LightPink"
+                BackgroundColor="LightGreen"
                 HeightRequest="5000"
                 WidthRequest="5000">
                 <GraphicsView.GestureRecognizers>

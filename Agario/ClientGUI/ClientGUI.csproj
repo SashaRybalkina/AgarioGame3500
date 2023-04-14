@@ -58,12 +58,8 @@
 	  <BundleResource Include="Resources\Images\dotnet_bot.svg" />
 	</ItemGroup>
 	<ItemGroup>
-	  <ProjectReference Include="..\Library\Library.csproj" />
 	  <ProjectReference Include="..\AgarioModels\AgarioModels.csproj" />
-	</ItemGroup>
-	<ItemGroup>
-	  <Reference Include="Communications">
-	    <HintPath>..\Library\Communications.dll</HintPath>
-	  </Reference>
+	  <ProjectReference Include="..\Communications\Communications.csproj" />
+	  <ProjectReference Include="..\Logger\Logger.csproj" />
 	</ItemGroup>
 </Project>
