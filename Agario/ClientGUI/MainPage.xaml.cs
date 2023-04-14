@@ -93,18 +93,30 @@ public partial class MainPage : ContentPage
         {
             worldModel.foods = JsonSerializer.Deserialize<List<Food>>(message[Protocols.CMD_Food.Length..]);
         }
-        if (message.StartsWith(Protocols.CMD_HeartBeat))
+        else if (message.StartsWith(Protocols.CMD_HeartBeat))
         {
             string toSend = string.Format(Protocols.CMD_Move, x, y);
             connection.Send(toSend);
         }
-        if (message.StartsWith(Protocols.CMD_Update_Players))
+        else if (message.StartsWith(Protocols.CMD_Update_Players))
         {
             worldModel.players = JsonSerializer.Deserialize<List<Player>>(message[Protocols.CMD_Update_Players.Length..]);
+            foreach (Player player in worldModel.players)
+            {
+                if (player.ID.Equals(worldModel.playerID))
+                {
+                    worldModel.player = player;
+                }
+            }
         }
-        if (message.StartsWith(Protocols.CMD_Player_Object))
+        else if (message.StartsWith(Protocols.CMD_Player_Object))
         {
             worldModel.playerID = JsonSerializer.Deserialize<long>(message[Protocols.CMD_Player_Object.Length..]);
+        }
+        else if (message.StartsWith(Protocols.CMD_Eaten_Food))
+        {
+            List<Food> eaten = JsonSerializer.Deserialize<List<Food>>(message[Protocols.CMD_Eaten_Food.Length..]);
+            worldModel.eaten = JsonSerializer.Deserialize<List<Food>>(message[Protocols.CMD_Eaten_Food.Length..]);
         }
     }
 
@@ -130,9 +142,8 @@ public partial class MainPage : ContentPage
     private async void PointerChanged(object sender, PointerEventArgs e)
     {
         Point? position = e.GetPosition((View)sender);
-        x = (int)(position.Value.X); //* 5000 / 800);
-        y = (int)(position.Value.Y); //* 5000 / 800);
-        worldModel.Direction = new Vector2(x, y);
+        x = (int)(position.Value.X * 5000 / 800);
+        y = (int)(position.Value.Y* 5000 / 800);
     }
 
     private async void OnTap(object sender, PointerEventArgs e)
