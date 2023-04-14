@@ -11,7 +11,7 @@ public class World
     public List<Player> players;
     public Player player;
     public Vector2 Direction;
-    public List<Food> eaten;
+    public long[] eaten;
     public List<Food> foods;
     public Food food;
     public CustomFileLogger logger;

@@ -115,8 +115,8 @@ public partial class MainPage : ContentPage
         }
         else if (message.StartsWith(Protocols.CMD_Eaten_Food))
         {
-            List<Food> eaten = JsonSerializer.Deserialize<List<Food>>(message[Protocols.CMD_Eaten_Food.Length..]);
-            worldModel.eaten = JsonSerializer.Deserialize<List<Food>>(message[Protocols.CMD_Eaten_Food.Length..]);
+            long[] eaten = JsonSerializer.Deserialize<long[]>(message[Protocols.CMD_Eaten_Food.Length..]);
+            worldModel.eaten = JsonSerializer.Deserialize<long[]>(message[Protocols.CMD_Eaten_Food.Length..]);
         }
     }
 
@@ -144,6 +144,11 @@ public partial class MainPage : ContentPage
         Point? position = e.GetPosition((View)sender);
         x = (int)(position.Value.X * 5000 / 800);
         y = (int)(position.Value.Y* 5000 / 800);
+    }
+
+    private async void OnSplitClicked(object sender, EventArgs e)
+    {
+        network.Send(string.Format(Protocols.CMD_Split, x, y));
     }
 
     private async void OnTap(object sender, PointerEventArgs e)

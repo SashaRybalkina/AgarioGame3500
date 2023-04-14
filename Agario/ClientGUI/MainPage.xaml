@@ -34,7 +34,9 @@
        <!--Second ScrollView: the actual game screen-->
        <ScrollView x:Name="gameScreen" IsVisible="false">
             <StackLayout>
-
+                <StackLayout Orientation="Horizontal">
+                   <Button Text="Split" VerticalOptions="CenterAndExpand" Clicked="OnSplitClicked"/>
+                </StackLayout>
                 <GraphicsView 
                 x:Name="PlaySurface"
                 VerticalOptions="Center"

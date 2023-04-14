@@ -23,7 +23,7 @@ namespace ClientGUI
                 float screenY = food.Y - worldModel.player.Y + 800/2;
                 if (screenX > 0 && screenX < 800 && screenY > 0 && screenY < 800)
                 {
-                    if (!worldModel.eaten.Contains(food))
+                    if (!worldModel.eaten.Contains(food.ID))
                     {
                         canvas.FillColor = Color.FromInt(food.ARGBColor);
                         canvas.FillCircle(screenX, screenY, food.Radius);
