@@ -15,21 +15,18 @@ namespace ClientGUI
 
         public void Draw(ICanvas canvas, RectF dirtyRect)
         {
-            //canvas.FillColor = Colors.Red;
-            //canvas.FillCircle(worldModel.player.location.X, worldModel.player.Y, worldModel.player.Radius);
-            foreach (Food food in worldModel.foods)
-            {
-                float screenX = food.X - worldModel.player.X + 800/2;
-                float screenY = food.Y - worldModel.player.Y + 800/2;
-                if (screenX > 0 && screenX < 800 && screenY > 0 && screenY < 800)
+            //lock (worldModel) {
+                foreach (Food food in worldModel.foods)
                 {
-                    if (!worldModel.eaten.Contains(food.ID))
+                    float screenX = food.X - worldModel.player.X + 800 / 2;
+                    float screenY = food.Y - worldModel.player.Y + 800 / 2;
+                    if (screenX > 0 && screenX < 800 && screenY > 0 && screenY < 800)
                     {
                         canvas.FillColor = Color.FromInt(food.ARGBColor);
                         canvas.FillCircle(screenX, screenY, food.Radius);
                     }
                 }
-            }
+            //}
 
             foreach (Player player in worldModel.players)
             {
@@ -37,8 +34,11 @@ namespace ClientGUI
                 float screenY = player.Y - worldModel.player.Y + 800 / 2;
                 if (screenX > 0 && screenX < 800 && screenY > 0 && screenY < 800)
                 {
+                    HorizontalAlignment horizontalAlignment = new HorizontalAlignment();
                     canvas.FillColor = Color.FromInt(player.ARGBColor);
                     canvas.FillCircle(screenX, screenY, player.Radius);
+                    canvas.FontColor = Colors.Black;
+                    canvas.DrawString(player.Name, screenX, screenY, horizontalAlignment);
                 }
             }
         }

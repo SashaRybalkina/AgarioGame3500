@@ -91,7 +91,14 @@ public partial class MainPage : ContentPage
     {
         if (message.StartsWith(Protocols.CMD_Food))
         {
-            worldModel.foods = JsonSerializer.Deserialize<List<Food>>(message[Protocols.CMD_Food.Length..]);
+            //lock (worldModel)
+            //{
+                List<Food> foods = JsonSerializer.Deserialize<List<Food>>(message[Protocols.CMD_Food.Length..]);
+                foreach (Food food in foods)
+                {
+                    worldModel.foods.Add(food);
+                }
+            //}
         }
         else if (message.StartsWith(Protocols.CMD_HeartBeat))
         {
@@ -117,6 +124,18 @@ public partial class MainPage : ContentPage
         {
             long[] eaten = JsonSerializer.Deserialize<long[]>(message[Protocols.CMD_Eaten_Food.Length..]);
             worldModel.eaten = JsonSerializer.Deserialize<long[]>(message[Protocols.CMD_Eaten_Food.Length..]);
+            List<Food> foodsToRemove = new();
+            foreach (Food food in worldModel.foods)
+            {
+                if (worldModel.eaten.Contains(food.ID))
+                {
+                    foodsToRemove.Add(food);
+                }
+            }
+            foreach (Food food in foodsToRemove)
+            {
+                worldModel.foods.Remove(food);
+            }
         }
     }
 
@@ -142,8 +161,8 @@ public partial class MainPage : ContentPage
     private async void PointerChanged(object sender, PointerEventArgs e)
     {
         Point? position = e.GetPosition((View)sender);
-        x = (int)(position.Value.X * 5000 / 800);
-        y = (int)(position.Value.Y* 5000 / 800);
+        x = (int)(position.Value.X * 5000 / 400);
+        y = (int)(position.Value.Y * 5000 / 400);
     }
 
     private async void OnSplitClicked(object sender, EventArgs e)

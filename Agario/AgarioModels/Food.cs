@@ -7,7 +7,7 @@ namespace AgarioModels
 	public class Food : GameObject
 	{
 		[JsonConstructor]
-		public Food(long ID, float X, float Y, float Mass, int ARGBColor)
+		public Food(float X, float Y, int ARGBColor, long ID, float Mass)
 			: base(ID, X, Y, Mass, ARGBColor)
 		{
 			
