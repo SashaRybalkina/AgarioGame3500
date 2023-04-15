@@ -35,18 +35,16 @@
        <ScrollView x:Name="gameScreen" IsVisible="false">
             <StackLayout>
                 <StackLayout Orientation="Horizontal">
-                   <Button Text="Split" VerticalOptions="CenterAndExpand" Clicked="OnSplitClicked"/>
+                   <Entry x:Name="splitEntry" Text="" VerticalOptions="CenterAndExpand"/>
                 </StackLayout>
                 <GraphicsView 
-                x:Name="PlaySurface"
-                VerticalOptions="Center"
-                BackgroundColor="LightGreen"
-                HeightRequest="800"
-                WidthRequest="800">
+                    x:Name="PlaySurface"
+                    VerticalOptions="Center"
+                    BackgroundColor="LightGreen"
+                    HeightRequest="800"
+                    WidthRequest="800">
                 <GraphicsView.GestureRecognizers>
                     <PointerGestureRecognizer PointerMoved="PointerChanged"/>
-                    <TapGestureRecognizer Tapped="OnTap"/>
-                    <PanGestureRecognizer PanUpdated="PanUpdated"/>
                 </GraphicsView.GestureRecognizers>
                 </GraphicsView>
             </StackLayout>

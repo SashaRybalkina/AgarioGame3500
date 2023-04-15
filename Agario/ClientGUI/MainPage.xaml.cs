@@ -28,16 +28,8 @@ public partial class MainPage : ContentPage
     public MainPage()
     {
         InitializeComponent();
-        OnTimerElapsed();
         worldModel = new World();
         OnSizeAllocated(400, 400);
-    }
-
-    private void OnTimerElapsed()
-    {
-        var random = new Random();
-        CircleCenter = new Vector2(x, y);
-        //Direction = new Vector2(random.Next(-1, 2), random.Next(-1, 2));
     }
 
     protected override void OnSizeAllocated(double width, double height)
@@ -62,7 +54,6 @@ public partial class MainPage : ContentPage
 
     private void GameStep(object state, ElapsedEventArgs e)
     {
-        worldModel.AdvanceGameOneStep();
         Dispatcher.Dispatch(PlaySurface.Invalidate);
         Debug.WriteLine("invoking");
     }
@@ -84,26 +75,24 @@ public partial class MainPage : ContentPage
 
     private void onDisconnect(Networking connection)
     {
-        ///connection.logger.LogInformation($"{this.network.tcpClient.Client.RemoteEndPoint} disconnect");
+        connection.logger.LogInformation($"{this.network.tcpClient.Client.RemoteEndPoint} disconnect");
     }
 
     private void onMessage(Networking connection, string message)
     {
         if (message.StartsWith(Protocols.CMD_Food))
         {
-            //lock (worldModel)
-            //{
-                List<Food> foods = JsonSerializer.Deserialize<List<Food>>(message[Protocols.CMD_Food.Length..]);
-                foreach (Food food in foods)
-                {
-                    worldModel.foods.Add(food);
-                }
-            //}
+            List<Food> foods = JsonSerializer.Deserialize<List<Food>>(message[Protocols.CMD_Food.Length..]);
+            foreach (Food food in foods)
+            {
+                worldModel.foods.Add(food);
+            }
         }
         else if (message.StartsWith(Protocols.CMD_HeartBeat))
         {
             string toSend = string.Format(Protocols.CMD_Move, x, y);
             connection.Send(toSend);
+            OnSplit();
         }
         else if (message.StartsWith(Protocols.CMD_Update_Players))
         {
@@ -123,11 +112,10 @@ public partial class MainPage : ContentPage
         else if (message.StartsWith(Protocols.CMD_Eaten_Food))
         {
             long[] eaten = JsonSerializer.Deserialize<long[]>(message[Protocols.CMD_Eaten_Food.Length..]);
-            worldModel.eaten = JsonSerializer.Deserialize<long[]>(message[Protocols.CMD_Eaten_Food.Length..]);
             List<Food> foodsToRemove = new();
             foreach (Food food in worldModel.foods)
             {
-                if (worldModel.eaten.Contains(food.ID))
+                if (eaten.Contains(food.ID))
                 {
                     foodsToRemove.Add(food);
                 }
@@ -158,25 +146,28 @@ public partial class MainPage : ContentPage
         }
     }
 
-    private async void PointerChanged(object sender, PointerEventArgs e)
+    private void PointerChanged(object sender, PointerEventArgs e)
     {
         Point? position = e.GetPosition((View)sender);
         x = (int)(position.Value.X * 5000 / 400);
         y = (int)(position.Value.Y * 5000 / 400);
     }
 
-    private async void OnSplitClicked(object sender, EventArgs e)
+    private void OnSplit()
     {
-        network.Send(string.Format(Protocols.CMD_Split, x, y));
+        splitEntry.Focus();
+        if (splitEntry.Text.Contains(" "))
+        {
+            network.Send(string.Format(Protocols.CMD_Split, x, y));
+            splitEntry.Text = "";
+        }
     }
 
-    private async void OnTap(object sender, PointerEventArgs e)
+    void splitButton_TextChanged(System.Object sender, Microsoft.Maui.Controls.TextChangedEventArgs e)
     {
-
     }
 
-    private async void PanUpdated(object sender, PointerEventArgs e)
+    void splitEntry_Focused(System.Object sender, Microsoft.Maui.Controls.FocusEventArgs e)
     {
-
     }
 }
