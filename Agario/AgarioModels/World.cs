@@ -1,6 +1,4 @@
-﻿using FileLogger;
-
-namespace AgarioModels;
+﻿namespace AgarioModels;
 
 /// <summary>
 /// Author:    Aurora Zuo 
@@ -27,7 +25,6 @@ public class World
     public Player player;
     public List<Food> foods;
     public Food food;
-    public CustomFileLogger logger;
     public long playerID;
 
     /// <summary>
