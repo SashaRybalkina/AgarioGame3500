@@ -68,6 +68,9 @@ but haven't got any solutions yet. Other than that, our communications works as 
     Auroroa Total Predicted Hours:  16           Total Actual Hours:         18
     Sasha Total Predicted Hours:    16           Total Actual Hours:         18
 
+    Time spent effectively: ~10 hours            Time spent debugging: ~4 hours
+    Time spent learning tools and techniques: ~4 hours
+
     All the work were done through side by side pair programming, thus the time expenditures
     for each person are the same.
 

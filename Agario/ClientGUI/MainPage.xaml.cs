@@ -60,12 +60,12 @@ public partial class MainPage : ContentPage
     }
 
     /// <summary>
-    /// Initializes the worldDrawable object, sets up the timer to update 16fps
+    /// Initializes the worldDrawable object, sets up the timer to update 30fps
     /// </summary>
     private void InitializeGameLogic()
     {
         PlaySurface.Drawable = new WorldDrawable(ref worldModel);
-        timer = new System.Timers.Timer(16);
+        timer = new System.Timers.Timer(30);
         timer.Elapsed += GameStep;
         timer.Start();
     }
@@ -116,7 +116,7 @@ public partial class MainPage : ContentPage
     /// </summary>
     /// <param name="connection"></param>
     /// <param name="message"></param>
-    private void onMessage(Networking connection, string message)
+    private async void onMessage(Networking connection, string message)
     {
         if (message.StartsWith(Protocols.CMD_Food))
         {
