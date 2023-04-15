@@ -33,7 +33,7 @@ public partial class MainPage : ContentPage
     private World worldModel;
     private int x;
     private int y;
-    Networking network;
+    private Networking network;
 
     public MainPage()
     {

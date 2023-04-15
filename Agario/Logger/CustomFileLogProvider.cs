@@ -2,11 +2,11 @@
 using System.IO;
 using Microsoft.Extensions.Logging;
 
-namespace FileLogger
+namespace Logger
 {
     /// <summary>
     /// Author:    Aurora Zuo & Sasha Rybalkina
-    /// Date:      Apr.07, 2023
+    /// Date:      Apr.14, 2023
     /// Course:    CS 3500, University of Utah, School of Computing
     /// Copyright: CS 3500, Aurora Zuo & Zhuofei Lyu - This work may not 
     ///            be copied for use in Academic Coursework.
