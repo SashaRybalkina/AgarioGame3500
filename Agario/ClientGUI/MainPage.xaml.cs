@@ -5,6 +5,9 @@ using Communications;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Logging.Abstractions;
 using System.Text.Json;
+using Java.Net;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Data.SqlClient;
 
 namespace ClientGUI;
 
@@ -118,6 +121,16 @@ public partial class MainPage : ContentPage
     /// <param name="message"></param>
     private async void onMessage(Networking connection, string message)
     {
+        string connectionString = new SqlConnectionStringBuilder()
+        {
+            DataSource = "cs3500.eng.utah.edu,14330",
+            InitialCatalog = "S2023_u1362376",
+            UserID = "S2023_u1362376",
+            Password = "Hungry_for_Men",
+            Encrypt = false
+        }.ConnectionString;
+        using SqlConnection con = new SqlConnection(connectionString);
+
         if (message.StartsWith(Protocols.CMD_Food))
         {
             // Deserialize the food objects from the message and add them to the game world.
@@ -138,8 +151,15 @@ public partial class MainPage : ContentPage
         {
             // Deserialize the player objects from the message and update the game world.
             worldModel.players = JsonSerializer.Deserialize<List<Player>>(message[Protocols.CMD_Update_Players.Length..]);
+
             foreach (Player player in worldModel.players)
             {
+                con.Open();
+
+                using SqlCommand insertMass = new SqlCommand($@"INSERT INTO Time VALUES ('{DateTime.Now.ToString("t")}', 'NULL')", con);
+                using SqlDataReader reader1 = insertMass.ExecuteReader();
+
+                con.Close();
                 if (player.ID.Equals(worldModel.playerID))
                 {
                     worldModel.player = player;
@@ -166,6 +186,22 @@ public partial class MainPage : ContentPage
             foreach (Food food in foodsToRemove)
             {
                 worldModel.foods.Remove(food);
+            }
+        }
+        else if (message.StartsWith(Protocols.CMD_Dead_Players))
+        {
+            long[] deadPlayers = JsonSerializer.Deserialize<long[]>(message[Protocols.CMD_Update_Players.Length..]);
+            foreach (Player player in worldModel.players)
+            {
+                if (deadPlayers.Contains(player.ID))
+                {
+                    con.Open();
+
+                    using SqlCommand insertMass = new SqlCommand($@"UPDATE Time SET EndTime = '{DateTime.Now.ToString("t")}' WHERE Player = {player.Name}", con);
+                    using SqlDataReader reader1 = insertMass.ExecuteReader();
+
+                    con.Close();
+                }
             }
         }
     }
