@@ -5,7 +5,6 @@ using Communications;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Logging.Abstractions;
 using System.Text.Json;
-using Java.Net;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Data.SqlClient;
 
@@ -101,7 +100,6 @@ public partial class MainPage : ContentPage
         {
             connection.logger.LogError($"Not Connected. Terminating program");
         }
-
     }
 
     /// <summary>
@@ -156,8 +154,8 @@ public partial class MainPage : ContentPage
             {
                 con.Open();
 
-                using SqlCommand insertMass = new SqlCommand($@"INSERT INTO Time VALUES ('{DateTime.Now.ToString("t")}', 'NULL')", con);
-                using SqlDataReader reader1 = insertMass.ExecuteReader();
+                using SqlCommand insertTime = new SqlCommand($@"INSERT INTO Time VALUES ('{DateTime.Now.ToString("t")}', 'NULL')", con);
+                using SqlDataReader reader1 = insertTime.ExecuteReader();
 
                 con.Close();
                 if (player.ID.Equals(worldModel.playerID))
@@ -191,17 +189,29 @@ public partial class MainPage : ContentPage
         else if (message.StartsWith(Protocols.CMD_Dead_Players))
         {
             long[] deadPlayers = JsonSerializer.Deserialize<long[]>(message[Protocols.CMD_Update_Players.Length..]);
-            foreach (Player player in worldModel.players)
+            List <Player> players = worldModel.players;
+            List<Player> sortedPlayers = players.OrderBy(o => o.Mass).ToList();
+            int index = 0;
+            foreach (Player player in sortedPlayers)
             {
                 if (deadPlayers.Contains(player.ID))
                 {
                     con.Open();
+                    using SqlCommand insertTime = new SqlCommand($@"UPDATE Time SET EndTime = '{DateTime.Now.ToString("t")}' WHERE Player = {player.Name}", con);
+                    using SqlDataReader reader1 = insertTime.ExecuteReader();
+                    con.Close();
 
-                    using SqlCommand insertMass = new SqlCommand($@"UPDATE Time SET EndTime = '{DateTime.Now.ToString("t")}' WHERE Player = {player.Name}", con);
-                    using SqlDataReader reader1 = insertMass.ExecuteReader();
+                    con.Open();
+                    using SqlCommand insertMass = new SqlCommand($@"INSERT INTO HighMass VALUES ('{player.Name}', '{player.Mass.ToString()}')", con);
+                    using SqlDataReader reader2 = insertMass.ExecuteReader();
+                    con.Close();
 
+                    con.Open();
+                    using SqlCommand insertRank = new SqlCommand($@"INSERT INTO HighRank VALUES ('{player.Name}', '{index.ToString()}')", con);
+                    using SqlDataReader reader3 = insertRank.ExecuteReader();
                     con.Close();
                 }
+                index++;
             }
         }
     }
