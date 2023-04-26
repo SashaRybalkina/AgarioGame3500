@@ -13,9 +13,9 @@ namespace ClientGUI;
 /// <summary>
 /// Author:    Aurora Zuo 
 /// Partner:   Sasha Rybalkina
-/// Date:      14-Apr-2023
+/// Date:      26-Apr-2023
 /// Course:    CS 3500, University of Utah, School of Computing
-/// Copyright: CS 3500, Aurora Zuo, and Zhuofei Lyu - This work not 
+/// Copyright: CS 3500, Aurora Zuo, and Sasha Rybalkina - This work not 
 ///            be copied for use in Academic Coursework.
 ///            
 /// Aurora Zuo and Sasha Rybalkina certify that we wrote this code from scratch and
@@ -27,6 +27,7 @@ namespace ClientGUI;
 ///		This class demonstrates the necessary functionalities for the Client
 ///		GUI, it allows the the client to connect to the server, send and receive
 ///		serialized data between client and server, and draw circles on the screen.
+///		It is also capable of sending players' data to the SQL database.
 /// </summary>
 public partial class MainPage : ContentPage
 {
@@ -151,18 +152,18 @@ public partial class MainPage : ContentPage
             worldModel.players = JsonSerializer.Deserialize<List<Player>>(message[Protocols.CMD_Update_Players.Length..]);
 
             foreach (Player player in worldModel.players)
-            {
-                con.Open();
-
-                using SqlCommand insertTime = new SqlCommand($@"INSERT INTO Time VALUES ('{DateTime.Now.ToString("t")}', 'NULL')", con);
-                using SqlDataReader reader1 = insertTime.ExecuteReader();
-
-                con.Close();
+            {           
                 if (player.ID.Equals(worldModel.playerID))
                 {
                     worldModel.player = player;
                 }
             }
+
+            // connects to the database and send player's info
+            con.Open();
+            using SqlCommand insertTime = new SqlCommand($@"INSERT INTO Time VALUES ('{worldModel.player.Name}', '{DateTime.Now.ToString("t")}', '{DateTime.Now.ToString("t")}')", con);
+            using SqlDataReader reader1 = insertTime.ExecuteReader();
+            con.Close();
         }
         else if (message.StartsWith(Protocols.CMD_Player_Object))
         {
@@ -188,10 +189,15 @@ public partial class MainPage : ContentPage
         }
         else if (message.StartsWith(Protocols.CMD_Dead_Players))
         {
+            // deserializes the dead players
             long[] deadPlayers = JsonSerializer.Deserialize<long[]>(message[Protocols.CMD_Update_Players.Length..]);
-            List <Player> players = worldModel.players;
+
+            // sort the players by their mass
+            List<Player> players = worldModel.players;
             List<Player> sortedPlayers = players.OrderBy(o => o.Mass).ToList();
             int index = 0;
+
+            // connects and send the dead players' info to database.
             foreach (Player player in sortedPlayers)
             {
                 if (deadPlayers.Contains(player.ID))

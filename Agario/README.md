@@ -61,6 +61,8 @@ Networking class (line 119), we commented that line out and everything works fin
 the provided Communications.dll, but the dll just breaks our entire GUI. We asked the TA about this problem
 but haven't got any solutions yet. Other than that, our communications works as expected.
 
+Apr.26 UPDATES:
+The Client Gui is capabale of sending player's data to the database when playing the agario game.
 
 # Time Expenditures:
 

@@ -27,6 +27,9 @@ is eaten by other player that's larger in size, game's over.
 The Client GUI replicates the functionalities of the sample Client GUI, though it does not demonstrates 
 the exact layouts as same as the sample GUI.
 
+Apr.26 UPDATES:
+The Client Gui is capabale of sending player's data to the database when playing the agario game.
+
 # Assignments Specific Topics:
 
 .NET MAUI, XAML, Logging, Networking, Draw, Timer, Protocols, SOLID, GSPs, Pair Programming.
